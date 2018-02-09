@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cedric.alibata.Chapters.chp3.Wikangpambansa">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KASAYSAYAN NG PAG-UNLAD NG WIKANG PAMBANSA"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:textStyle="bold|italic"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Ang ating bansa ay isa sa mga bansang may pinakamaraming dayalekto. Sa mahigit na pitong libong  pulo mayroong tayo, higit sa apat na raang iba’t ibang dayalekto o wikain ang ginagamit. Bawat rehiyon ay may sari-saring wika o mga wikain. Dahil dito, naging napakahirap ang pakikipag-ugnayan natin sa isa’t isa. Nagkataoon tuloy tayo ng suliranin sa pagkabuklod-buklod at pagkakaisa."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Kung tutuusin, hindi sana tumagal nang mahigit tatlong daan at tatlumpu ang ating pagkakaalipin kung noon pa mang unang taon ng pananakop ay may isa nang malawak na wikang nauunawaan at ginagamit ng nakararaming Pilipino (Bisa, et al., 1983)."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Pag-aralan natin ang ilang mahahalagang batas, kautusan, proklama o kautusang ito:"/>
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:src="@drawable/manuel"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pangulong Manuel L. Quezon"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:textStyle="bold|italic"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1935 - Sa saligang Batas ng Pilipinas, nagtadhana ng tungkol sa wikang pambansa: “...ang Kongreso at gagawa ng mga hakbang tungo sa pagpapaunlad at pagpapatibay ng ibang wikang pambansa na batay sa isa sa mga umiiral na katutubong wika.” (Seksyon 3, Artikulo XIV)."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1936 - (Oktubre 27) – Itanagubilin ng Pangulong Manuel L. Quezon sa kanyang mensahe sa Asemblea Nasyonal ang paglikha ng isang Surian ng Wikang Pambansa na gagawa ng isang pag-aaral ng mga wikang katutubo sa Pilipinas, sa layuning makapagpaunlad at makapagpatibay ng isang wikang panlahat na batay sa isang wikang umiiral."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1936 - (Nobyembre 13) – Pinagtibay ng Batasang Pambansa ang Batas Komonwelt Blg. 184 na lumikha ng isang Surian ng Wikang Pambansa at itinatakda ang mga kapangyarihan at tungkulin niyon."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="Ang mga naging tungkulin gawain ng Surian ng Wikang Pambansa ay ang sumusunod:"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="1.Pag-aaral ng mga pangunahing wika na ginagamit ng may kalahating milyong Pilipino man lamang;"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="2.Paggawa ng paghahambing at pag-aaral ng talasalitaan ng mga pangunahing deyalekyo;"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="3.Pagsuri at pagtiyak sa ponetika at ortograpiyang Pilipino;"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="4.Pagpili ng katutubong wika na siyang magiging batayyan ng wikang pambansa na dapat umaayon sa (a) ang pinakamaunlad at mayamang sa panitikan, (b) ang wikang tinaanggap at ginagamit ng pinakamaraming Pilipino."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1937 - (Enero 12) – Hinirang ni Pngulong Manuel L. Quezon ang mga kagawad na bubuo ng Surian ng Wikang Pambansa alinsunod sa tadhana ng Seksyon 1, Batas Komonwelt Blg. 184, sa pagkakasusog ng Batas Komonwelt Blg. 333."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1937 - (Hunyo 18) – Pinagtibay ang Batas ng Komonwelt Blg. 333, na nagsususog sa ilang seksyon ng batas ng Komonwelt Blg. 184."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1937 - (Nobyembre 9) – Bunga ng ginagawang pag-aaral at alinsunod sa tadhana ng Batas Komonwelt Blg. 184, ang Surian ng Wikang Pambansa ay nagpatibay ng isang resolusyon na roo’y ipinahayag na ang Tagalog ay siyang halos lubos na nakatutugon sa mga hinigingi ng Batas ng Komonwelt Blg. 184,  kaya’t itinagubilin niyon sa Pangulo ng Pilipinas na iyon ay pagtibayin bilang saligan ng wikang pambansa."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1937 - (Disyembre 30) – Bilang pag-alinsunod sa tadhana ng Batas ng Komonwelt Blg. 184, sa pamamagitan ng kautusang Tagapagpaganap Blg. 134 ay ipinahayag ng Pangulong Quezon ang Wikang Pambansa ng Pilipinas na batay sa Tagalog."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1940 - (Abril 1) – Sa pamamagitan ng Kautusang Tagapagpaganap Blg. 263 ay binigyang -pahintulot ang pagpapalimbag ng isang Diksyunaryo at isang Gramatika ng Wikang Pambansa, at itinakdang mula sa Hunyo 19,1940 ay pasisimulan nang ituro ang Wikang Pambansa ng Pilipinas sa lahat ng paaaralang-bayan at pribado sa buong bansa. Inatasan din ang Kalihim ng Pagtuturong Pambayan na maglagda, kalakip ang pagpapatibay ng Pangulo ng Pilipinas, ng mga kinakilangang tuntunin at patakaran sa pagpapaunlad ng kautusang ito."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1940 - (Abril 12) – Pinalabas ng Kalihim Jorge Bocobo ng Pagtuturong Pambayan ang isang Kautusang Pangkagawaran: ito’y sinundan ng isang sirkular (Blg. 26, serye 1940) ng Patnugot ng Edukasyon Celendonio Salvador. Ang pagtuturo ng wikang pambansa ay sinimulan muna sa mataas at paaralang normal."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1940 - (Hunyo 7) – Pinagtibay ang Batas ng Komonwelt Blg. 570, na nagtatadhana, bukod sa iba pa, na ang Pambansang Wika ay magiging isa na sa mga wikang opisyal ng Pilipinas simula sa Hunyo 4,1940."/>
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:src="@drawable/magsaysay"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pangulong Ramon Magsaysay Sr."
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:textStyle="bold|italic"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1954 - (Marso 26) – Nilagdaan ng Pangulong Ramon Magsaysay ang Proklama Blg. 186 na nagsusog sa Proklama Blg. 12 serye ng 1954, na sa pamamagitan nito’y inililipat ang panahon ng pagdiriwang ng Linggo ng Wikang Pambansa taon-taon simula sa ika-13 hanggang ika-19 ng Agosto. Nakapaloob sa panahong saklaw ang pagdiriwang ng kaarawan ni Quezon (Agosto 19)."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1959 - (Agosto 13) – Pinalalabas ng Kalihim Jose E. Romero ng Kagawaran ng Edukasyon ang Kautusang Pangkagawaran Blg. 7, na nagsasaad na kailan ma’y tutukuyin ang Wikang Pambansa, ang salitang PILIPINO ay siyang gagamitin."/>
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:src="@drawable/marcos"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pangulong Ferdinand Marcos"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:textStyle="bold|italic"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1967 - (Oktubre 24) – Naglagda ang pangulong Marcos ng isang kautusang Tagapaganap Blg. 96, na nagtatadhanang ang lahat ng gusali, edipisyo at tanggapan ng pamahalaan ay papangalan na sa Pilipino."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1968 - (Marso 27) – Pinalabas ng Kalihim Tagapagpaganap Rafael M. Salas ang Memorandum Sirkular Blg. 172 na nagbibigay-diin sa pagpapairal ng Kautusang Tagapagpaganap Blg. 96, at bilang karagdagan ay iniaatas din na ang mga letterhead ng mga kagawaran, tanggapan at mga sangay ng pamahalaan ay nararapat na nasusulat sa Pilipino, kalakip ang kaukulang teksto sa Ingles. Iniatas din na ang pormularyo ng panunumpa sa tungkulin ng mga pinuno at empleyado ng pamahalaan ay sa Pilipino gagawin."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1968 - (Agosto 5) – Pinalabas ang Memorandum Sirkular Blg. 199 na nilagdaan ni Kalihim Tagapagpaganap Rafael M. Salas na nananawagan sa mga pinuno at empleyado ng pamahalaan na dumalo sa mga seminar sa Pilipino na idiraos ng Surian ng Wikang Pambansa sa lahat ng purok pangwika."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1968 - (Agosto 6) – Ang Kautusang Tagapagpaganap Blg. 187 ay nilagdaan ng Pangulo na nag-aatas sa lahat ng kagawaran, kawanihan, tanggapan at iba pang sangay ng pamahalaan na gamitin ang wikang Pilipino hanggat maari sa Linggo ng Wikang Pambansa at pagkaraan nito, sa lahat ng opisyal na komunikasyon at transaksyon ng pamahalaan."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1969 - (Agosto 7) – Ang Memorandum Blg. 277 ay pinalabas ni Kalihim Tagapagpaganap Ernesto M. Maceda na bumabago sa Memorandum Sirkular Blg. 199 na nanawagan sa mga pinuno at empleyado ng pamahalaan na dumalo sa mga seminar sa Pilipino na idaraos ng Surian ng Wikang Pambansa sa lahat ng purok pangwika hanggang sa ang lahat ng pook ay masaklaw ng kilusang pangkapuluan sa pagpapalaganap ng Wikang Pambansa."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1970 - (Agosto 17) – Pinalabas ni Kalihim Tagapagpaganap Alejandro Melchor ang Memorandum Sirkular Blg. 384 na nagtatalaga ng mga may kakayahang tauhan upang mamahala ng lahat ng komunikasyon sa Pilipino sa lahat ng departamento, kawanihan, tanggapan at iba pang sangay ng pamahalaan, kabilang ang mga korporasyong ari o kontrolado ng pamahalaan."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1971 - (Marso 4) – Pinalabas ng Kalihim Tagapagpaganap Alejandro Melchor ang Memorandum Sirkular Blg. 443 na hinihiling sa lahat ng tanggapan ng pamahalaan na mag daos ng palatuntunan sa alaala ng ikaw-183 anibersaryo ng kapanganakan n Francisco (Balagtas) Baltazar sa Abril 2,1971."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1971 - (Marso 16) – Nilagdaan ni Pangulong Ferdinand E. Marcos ang kautusang Tagapagpaganap Blg. 304 na nagpapanauli sa Surian ng Wikang Pambansa at nililiwanag ang kanyang mga kapangyarihan at tungkulin."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Ang Surian ng Wikang Pambansa ay nagkaroon ng sumusunod na mga kapangyariahan, tungkulin at gawain;"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="1.Maghayag ng mga kinakailngang panuntunan at mga alintuntunin na alinsunod sa mga pamantayang umiiral at tumutugon sa mga pinakabagong kaunlaran sa agham ng lingguwistika tungo sa pagpapalawak at pagpapalakas ng Wikang Pambansa;"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="2.Ialinsabay sa panahon ang gramatika ng Wikang Pambansa;"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="3.Magpanukala ng diksyunaryo, tesauro, ensayklopidya o ano mang kasangkapang lingguwistika ayon sa mga pinakabagong leksikograpiya, pilosopiya at pagkatha ng ensayklopedya;"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="4.Magpanukala at maghayag ng mga patakarang pangwika na naangkop sa proresibong pagpapaunlad ng edukasyonal, kultura, lipunan at ekonomiya ng bansa;"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="5.Pag-aralan at pagpasyahan ang mga pangunahing isyung may kinalaman sa Wikang Pambansa;"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="6.Magpanukala ng mga patakarang naglalayon ng maramihang produksyon ng mga aklat, pamplet, at katulad ding babasahin sa Wikang Pambansa sa uri at obrang orihinal; "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="7.Isagawa ang iba pang kaugnay ng gawain."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1971 - (Hunyo 29) – itinadhana ng Memorandum Sirkular Blg. 488 na humihingi sa lahat ng tanggapan ng pamahaan na magdaos ng palatuntunan sa pagdiriwang ng Liggo ng Wikang Pambansa, Agosto 13-19."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="(Disyembre 1) – Nilagdaan ni Pangulong Marcos ang Kautusang Panlahat Blg. 17, na nag-uutos na limbagin sa Pilipino at Ingles sa Official Gazette at gayon din sa mga pahayahang may malawak na sirkulasyon bago idaos ang plebisito para sa ratipikasyon ng Saligang Batas noong Enero 5,1973."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1972 - (Disyembre) – Nag-atas ang Pangulong Ferdinand E. Marcos sa Surian ng Wikang Pambansa na ang Saligang Batas ay isalin sa mga wikang sinasalita ng mga limampung linong (50,000) mamamayan, alinsunod sa probisyon ng Saligang Batas (Artikulo XV, Seksyon 3 [1])."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1973 - Sa Saligang-Batas, Artikulo XV, Seksyon 3, ganito ang sinasabi;"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Ang Saligang-Batas na ito ay dapat ipahayag sa Ingles at Pilipino, ang dapat na mga Wikang Opisyal, at isalin sa bawat dayalektong sinasalita ng mahigit sa limamping libong taong-bayan, at sa Kastila at Arabik. Sakaling may hidwaan, ang tekstong Ingles ang mananaig."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Ang Pambansang Asamblea ay dapat gumagawa ng mga hakbang tungo sa pagpapaunlad at pormal na adapsyon ng panlahat na Wikang Pambansa na makikilalang Pilipino."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1974 - (Hunyo 19) – Nilagdaan ni Kalihim Juan L. Manuel ng Edukasyon at Kultura ang Kauntusang Pangkagawaran Blg. 25 na nagtatadhana ng mga panuntunan sa pagpapatupad ng patakarang edukasyong bilingguwal sa mga paaralan na magsisimula sa taong-aralan 1974-1975. Ang kautusang ito ay alinsunod sa mga tadhana ng Saligang-Batas ng 1972."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1978 - (Hulyo 21) – Nilagdaan ni Ministro ng Edukasyon at Kultura Juan L. Manuel ang Kautusang Pangministri Blg. 22 na nag-uutos na isama ang Pilipino sa lahat ng kurikulum na pandalubhasaang antas. Magsisimula sa unang semestre ng taong-aralan 1979-1980, ang antas ng pangmataas na edukasyong institusyon ay magbubukas ng anim (6) na yunit sa Pilipino sa kanilang mga palatuntunang aralin sa lahat ng kurso, maliban sa mga kursong pagtuturo sa labindalawang (12) yunit."/>
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:src="@drawable/cory"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pangulong Corazon C. Aquino"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:textStyle="bold|italic"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1986 - (Agosto 12) - Nilagdaan ni Pangulong Corazon C. Aquino ang Proklamasyon Blg. 19 na kumikilala sa Wikang Pambansa na gumagawa ng napakahalagang papel sa himagsikang pinasiklab ng Kapangyarihang Bayan na nagbunsod sa bagong pamahalaan."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1987 - (Pebrero 2) – Pinagtibay ang Bagong Konstitusyon ng Pilipinas sa Artikulo XIV, Seksyon 6-9, nasasaad ang sumusunod:"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Sek. 6 - Ang wikang pambansa ng Pilipinas ay Filipino. Samantalang nililinang, ito ay dapat payabungin at pagyamanin pa salig sa umiiral na wika sa Pilipinas at sa iba pang mga wika."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Alinsuno sa mga tadhana ng batas sa sang-ayon sa nararapat na maaaring ipasya ng Kongreso, dapat magsagawa ng mga habangin ang pamahalaan upang ibunsod at puspusang itaguyod ang paggamit ng Filipino bilang midyum ng opisyal na komunikasyon ay bilang wika ng pagtuturo sa sistemang pang-edukasyon."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Sek. 7 - Ukol sa mga layunin ng komunikasyon at pagtuturo, ang mga wikang opisyal ng Pilipinas ay Filipino at hanggat walang ibang itinatadhana ang batas, Ingles."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Ang mga wikang panrehiyon ay pantulong sa mga wikang opisyal sa mga rehiyon at magsisilbing pantulong sa mga wikang panturo noon."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Dapat itaguyod nang kusa at opsyonal ang Kastila at Arabik."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Seks. 8 - Ang  konstitusyong ito ay dapat ipahayag sa Filipno at Ingles at dapat isalin sa mga pangunahing wikang panrehiyon, Arabik at Kastila."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Sek. 9 - Dapat magtatag ang Kongreso ng isang Komisyon ng Wikang Pambansa na binubuo ng mga kinatawan ng iba’t ibang mga rehiyon at mga disiplina na magsasagawa, mag-uugnay at magtataguyod ng mga pananaliksik sa Filipino at iba pang mga wika para sa kanilang pagpapaunlad, pagpapalaganap at pagpapanatili."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1987 - Pinalabas ng Kalihim Lourder R. Quisumbing ng Departamento ng Edukasyon Kultura at Palakasan ang Kautusan Bilang 52 na nag-uutos sa paggamit ng Filipino bilang wikang panturo sa lahat ng antas sa mga paaralan kaalinsabay ng Ingles na nakatakda sa patakarang edukasyong bilingguwal."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1988 - (Agosto 25) – Nilagdaan ng Pangulong Corazon C. Aquino ang Kautusang Tagapagpaganap Blg. 335 na nagtatagubiliin sa lahat ng departamento, kawanihan, tanggapan, ahensya at kaparaanan ng pamahalaan na gumawa ng mga kinakailangang hakbang para sa paggamit ng wikang Filipino sa mga opisyal na transaksyon, komunikasyon at korespondensya."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1989 - (Septyembre 9) – Pinalabas ng Kalihim Lourdes R. Quisumbing ng Edukasyon, Kultura at Palakasan ang Kautusang Pangkagawaran Blg. 84 na nag-aatas sa lahat ng opisyal ng DECS na isakatuparan ang kautusang Tagapagpaganap Blg. 335 na nag-uutos na gamitin ang Filipino sa lahat ng komunikasyon at transaksyon ng pamahalaan."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1990 - (Marso 19) – Pinalabas ng Kalihim Isidro Carino ng Departamento ng Edukasyon, Kultura at Palakasan ang Kautusang Pangkagawaran Blg. 21 na nagtatagubilin na gamitin ang Filipino sa pagbigkas ng panunumpa ng katapatan sa Saligang-Batas at sa bayan natin."/>
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:src="@drawable/fidel"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pangulong Fidel V. Ramos"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:textStyle="bold|italic"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1996 - Pinalabas ng Commission on Higher Education ang CHED Memorandum Blg. 59 na nagtatadhan ng (9) na yunit na pangangailanga sa Filipino sa pangkalahayang edukasyon at nagbabago sa deskripsyon at nilalaman ng mga kurso sa Filipino 1 (Sining ng Pakikipagtalastasan), Filipino 2 (Pagbasa at Pagsulat sa Iba’t ibang Disiplina) at Filipino 3 (Retorika)."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="1997 - (Hulyo) Nilagdaan at ipinalabas ni Pangulong Fidel V. Ramos ang Proklama Blg. 1041 na nagtatakda na ang buwan ng Agosto taon-taon ay magiging buwan ng Wikang Pilipino at nagtatagubilin sa iba’t ibang sangay/tanggapan ng pamahalaan at sa mga paaralan na magsasagawa ng mga gawain kaugnay sa taunang pagdiriwang."/>
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:src="@drawable/gloria"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pangulong Gloria Macapagal-Arroyo"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:textStyle="bold|italic"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="2001 - Tungo sa mabilis na estandardisasyon at intelektuwalisasyon ng Wikang Filipino, ipinalabas ng Kominsyon na Wikang Filipino ang 2001 Revision ng Ortografiyang Filipino at Patnubay sa Ispelling ng Wikang Filipino."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="2006 - Sa okasyon ng pagdiriwang ng Buwan ng Wikang Filipino, ipinagbigay – alam ng Komisyon sa Wikang Filipino ang pagsuspinde sa 2001 Revision ng Ortografiyang Filipino at Patnubay sa Ispelling ng Wikang Filipino at samantalang nagsasagawa ng mga pananaliksik, pag-aaral, konsultasyon at hanggat walang nababalangkas na mga bagong tuntunin sa pagbabaybay, magsisilbing tuntunin ang Patnubay sa Ispelling ng Wikang Filipino ng taong 1987."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="2009 - Ipinalabas ng Komisyon sa Wikang Filipino sa pamamagitan ng kanilang Sangay ng Lingguwistika ang Gabay sa Ortograpiyang Filipino. Tuluyan nang isinasantabi ang 2001 Revisyong Alfabeto at 1987 Alpabeto, bagamat ano mang tuntunin sa 1987 at 2001 na hindi binago sa 2009 Gaby ay mananatiling ipatutupad."/>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

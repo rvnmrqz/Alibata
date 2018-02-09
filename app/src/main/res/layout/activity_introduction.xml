@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cedric.alibata.Introduction">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/lnear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <Button
+                    android:id="@+id/button_play"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/play"
+                    android:onClick="playIT"
+                    android:text=""
+                    tools:layout_editor_absoluteX="125dp"
+                    tools:layout_editor_absoluteY="166dp"/>
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Baybayin"
+                android:gravity="center"
+                android:textStyle="bold|italic"
+                android:textSize="25sp"/>
+            <TextView
+                android:id="@+id/txt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Ang Baybayin (alam sa Unicode bilang Tagalog script o panitik na Tagalog) ay isang lumang paraan ng pagsulat ng mga kayumangging Pilipino (mga salitang katutubo sa kapuluan ng Pilipinas) bago pa nakarating sa kapuluan ang mga dayong Kastila. Ito ay supling sa panulat Kawi (gaya ng sa LCI 822 A.D.) na paraan ng pagsulat ng mga taga-Java at iba pang bahagi ng Timog Silangang Asya. Ito ay bahagi ng sistema o pamamaraang Brahmic (na nagsimula sa eskrito o sagisag na Sanskrit) at pinaniniwalaang ginagamit noong ika-8 siglo sa pulo ng Luzon.. Ito ay nasaksihan na ginagamit sa mga kapuluan ng Pilipinas ng mga Kastila nuong ika 16 na siglo. Ang ibang kahalintulad na mga paraan ng pagsulat ay ang mga Hanunóo, Buhid, at Tagbanwa na nanatili paring gamit sa kasalukuyan sa nasabing pangkat. Ang salitang baybayín sa kasalukuyang wikang Tagalog ay katunayang nangangahulugan ng pagsulat ng mga titik ng isang salita, o to spell sa wikang Ingles."/>
+            <TextView
+                android:id="@+id/txt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Mga derabatibo at paggamit"
+                android:textStyle="bold|italic"
+                android:textSize="25sp"/>
+            <TextView
+                android:id="@+id/txt4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Ang sistema ng pagsulat ay ayon sa sistemang abugida na gumagamit ng pagpaparis ng katinig at patinig. Bawat titik, kung isulat sa payak na anyo, ay isang katinig na nagtatapos sa patinig na A. Upang isulat ang isang katinig na nagtatapos sa ibang patinig, maaaring maglagay ng kudlit sa ibabaw (kung nais isama sa patinig na E o I) o sa ilalim (kung nais isama sa patinig na O o U). Ang paglagay ng kudlit ay naaangkop lamang sa mga katinig, at hindi maaaring gawin sa mga patinig. May sariling mga marka ang mga patinig. Gayon pa man, may isang simbolo lamang para sa D o R dahil ang mga ito ay tinatawag na ALLOPHONES, na kung saan ang D ay maaaring may INITIAL, FINAL, PRE-CONSONANTAL o post-CONSONATAL na posisyon, at ang R naman ay may intervocalic na mga posisyon."/>
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="matrix"
+                android:layout_gravity="center"
+                android:src="@drawable/img"/>
+
+            <TextView
+                android:id="@+id/txt5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Sa orihinal na anyo, ang isang nagsosolong katinig (isang katinig na walang kasamang patinig) ay hindi maaaring isulat. Ito ay dahilan kung bakit ang Kastilang pari na si Francisco Lopez ay nagpasimula ng paggamit ng mga kudlit sa kanyang pagsasalin ng mga aklat sa katutubong wika. Noong 1620, nagsimulang gamitin ni Father Francisco Lopez ang kanyang sariling mga kudlit na nag-aalis ng mga patinig sa mga katinig. Ang ginamit niyang kudlit ay nasa anyong +, bilang pag-ukoy sa Kristianismo. Ang simbolong + ay ginagamit din sa katulad na dahilan sa virama sa eskriptong Devanagari ng India."/>
+            <TextView
+                android:id="@+id/txt6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="Sa kasalukuyan, ang mga simbolo/sagisag ng Baybayin ay nasa Unicode at kilala sa tawag na Tagalog Sign Virama."/>
+            <TextView
+                android:id="@+id/txt7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Tunog"
+                android:textStyle="bold|italic"
+                android:textSize="25sp"/>
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/imgtunog"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

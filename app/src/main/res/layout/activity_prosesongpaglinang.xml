@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cedric.alibata.Chapters.chp3.Prosesongpaglinang">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KALIKASAN, KONSEPTO AT PROSESO NG PAGLINANG"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:textStyle="bold|italic"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Linawin natin ang probinsyong pangwika sa ating Konstitusyon. Sa Artikulo XVI, Sesksyon 6 ay ganito ang isinasaad:"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Ang wikang pambansa ng Pilipinas ay Filipino Samantala nililinang, ito ay dapat payabungin at pagyamanin pa salig sa mga umiiral na wika sa Pilipinas at sa iba pang mga wika."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Idekonstrak natin ang probisyong ito. Una, malinaw kung ano ang itatawag na wikang pambansa ng Pilipinas, at ito ay Filipino. Ikalawa, ito ay isang wikang nasa proseso pa rin ng paglilinang. Ikatlo, may dalawang saligan ng pagpapayabong at pagpapayaman sa wikang ito, at ito ay ang umiiral na wika sa ating bansa o ang mga dayalek at ang ikalawa ay ang iba pang wika o ang mga wikang dayuhan na nakaimpluwensya/nakaiimpluwensya sa ating kabihasnan tulad ng Ingles, Kastila, Instsik at iba pa."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Ngunit ano ba ang pormal na deskripsyon ng Filipino bilang wikang pambansa? Makatutulong sa atin ang mulang pagsangguni sa Resoslusyon 96-1 ng Komisyon sa Wikang Filipino. Ganito ang batayang deskripsyon ng Filipino ayon sa KWF:"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Ang Filipino ang katutubong wika na ginagamit sa buong Pilipinas bilang wika  ng komunikasyon ng mga etnikong grupo. Katulad ng iba pang wikang buhay, ang Filipino ay dumaraan sa proseso ng paglinang sa pamamagitan ng panghihiram sa mga wika sa Pilipinas at mga di-katutubong wika at ebolusyon ng iba’t ibang barayti ng wika para sa iba’t ibang saligang sosyal at para sa mga paksa ng talakayan at iskolarling pagpapahayag."/>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

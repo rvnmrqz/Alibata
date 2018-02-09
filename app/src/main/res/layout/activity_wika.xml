@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cedric.alibata.Chapters.chp1.Wika">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/button_play"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/play"
+                android:onClick="playIT"
+                android:text=""
+                tools:layout_editor_absoluteX="125dp"
+                tools:layout_editor_absoluteY="166dp"/>
+        </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WIKA, KATUTURAN AT KATANGIAN"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:textStyle="bold|italic"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:text="Ang wika ay maaring tumukoy sa kakayahan ng tao na mag-angin at gumamit ng mga komplikadong sistemang pangkomunikasyon, o sa ispesipikong pagkakataon ng nasabing komplikadong sistemang pangkomuniskasyon. Bilang isang pangkalahatang konsepto ang, ang wika ay tumutukoy sa kogniibong pakulti na nagbibigay-kakayahan sa mga tao upang matuto at gumamit ng mga sistema ng komplikadong komunikasyon. Bilang isang ispesipikong lingguwistik sa konsepto, ang wika ay tumutukoy sa mga tiyak na lingguwistik na sistema na ang kabuuan ay pinangalanan ng tiyak na katawagan tulad ng Ingles, Pranses, Aleman, Nihonggo, Mandarin, Filipino, at iba pa."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:text="Ang humingit-kumulang sa 3,000 hanggang 6,000 mga wika na sinasalita ng mga tao sa kasalukuyan ang pinakamahusay na hlimbawa ng wika bilang isang ispesipikong lingguwistik na konsepto, ngunit ang nataural na wika ay maari ring nakabatay sa mga biswal na istimulus liban pa sa mga awditibong istimulus, katulad halimbawa ng pasulat na wika at sign laguage. Ang mga koda at iba pang uri ng artipisyal na likahang sistemang pangkomuniskasyon tulad ng ginagamit sa computer programming  ay tinatwag din wika."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:text="Ang salitang Ingles na laguage ay mula sa salitang Latin na lingua na ang ibig sabihin ay dila. Ang metaporikal na relasyon ng wika at dila ay umiiral sa maraming wika at patunay ito sa historikal na pagkaprominente ng sinasalitang wika."
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="1.Ang wika ay masistemang balangkas"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Lahat ng wika sa daigdig ay sistematikong na nakasaayos sa isang tiyak na balangkas. Walang wika ang hindi nakaayon sa balangkas na ito. Lahat ng wika aya nakabatay sa tunog. Ponema ang tawag sa makahulugang tunog ng isang wika samantalang Ponolohiya naman ang tawag sa makaagham na pag-aaral ng mga ito. Kapag ang mga ponemang ito ay pinagsama, maaring makabuo ng maliit na yunit ng salita tinatawag na morpema. Ang morpemang mabubuo ay maaring isang salitang-ugat, panlipi o morpemang ponema katulad ng ponemang /a/ na sa wika natin ay maaring magpahiwatig ng kasariang pambabae. Morpolohiya naman ang tawag sa makaagham na pag-aaral ng mga morpema. Samantala, kapag ang mga salita ay ating pinag-ugnay, maaari naman tayong makabuo ng mga pangungusap. Sintaksis naman ang tawag sa makaagham na pag-aaral ng mga pangungusap."/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:src="@drawable/balangkas"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="2.Ang wika ay sinasaliang tunog"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Hindi lahat ng tunog ay wika sapagkat hindi lahat ng tunog ay may kahulugan. Sa tao, ang pinakamakahulugang tunog na nililikha natin at kung gayo’y kasangkapan ng komunikasyon sa halos lahat kung hindi man lahat ng pagkakataon ay ang tunog na sinasalita. Samakatuwid, ito ang mga tunog na nalilikha ng ating aparato sa pagsasalita na nagmumula sa hanging nanggagaling sa baga o ang pinaggagalingang lakas o enerhiya, nagdaraan sa pumapalag na bagay na lumilikha ng tunog o artikulador at mino-modify ng resonador."/>
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+
+            android:src="@drawable/pagsasalita"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+
+            android:text="3.Ang wika ay pinipili at isinasaayos"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Sa lahat ng pagkakataon, pinipili natin ang wikang atin gagamitin. Madalas, ang pagpili ay nagaganap sa ating subconscious ay magkaminsan ay sa ating conscious na pag-iisip. Bakit lagi nating pinipili ang wikang ating gagamitin? Ang sagot: Upang tayo’y maunawaan ng ating kausap. Hindi maaaring ipagpilitan nating gamitin ang isang wikang hindi nauunawaan ng ating kausap. Gayon din ang ating kausap, hindi nuya maaring ipagpilitan ang wikang hindi natin batid. Tayo, ang ating kausap o ang pareho ay kailangang pumili ng komong wika kung saan tayo magkakaunawaan."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="4.Ang wika ay arbitraryo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Kung ipinapalagay na ang wika ay arbitraryo, ano ang paliwanag sa pahayag na ito? Ayon kay Archidad A. Hill (sa Tumangan, et al., 2000), just that the sound of speech and their connection with entities of experience are passed on to all members of any community by older members of that community.  Kung gayon, ang isang taong walang ignayan sa isang komunidad ay hindi matututong magsalita kung paanong ang mga naninirahan sa komunidad na iyon ay nagsasalita sapagkat ang esensya ng wika panlipunan."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="5.Ang wika ay ginagamit"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Ang wika ay kasangkapan sa komunikasyon at katulad ng iba pang kasangkapan, kailangang patuloy itong ginagamit. Ang isang kasangkapang hindi na ginagamit ay nawawalan na ng saysay, hindi ba? Ganon din ang wika. Idagdag pa na kapag ang wika ay hindi na ginagamit, ito ay unti-unting mawawala at tuluyang mamamatay."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="6.Ang wika ay nakabatay sa kultura"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Paanong nakakaiba-iba ang mga wika sa daigdig? Ang sagot, dahil sa pagkakaiba-iba ng mga kultura ng mga bansa at mga pangkat. Ito ang paliwanag kung bakit may mga kaisipan sa isang wika ang walang katumbas sa ibang wika sapagkat wala sa kultura ng ibang wika ang kaisipang iyon ng isang wika. Pansinin natin ang pagkakaiba ng Ingles at Filipino."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="7.Ang wika ay nagbabago"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Dinamiko ang wika. Hindi ito maaaring tumangging magbago. Ang isang wikang stagnant ay maaari ring mamatay tuladng hindi paggamit niyon. Paano nagbabago ang wika? Ang isang wika ay maaaring nadaragdagan ng mga bagong bokabularyo. Bunga ng pagiging malikhain ng mga tao, maaaring sila ay nakalilikha ng mga bagong salita. Ang pinakamahusay na halimbawa nito ay ang mga salitang balbal at pangkabataan. Samantala, kailangan ding lapatan ng mga katawagan ang mga produkto ng pag-unlad ng teknolohiya at syensya."/>
+
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

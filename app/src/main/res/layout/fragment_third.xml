@@ -1,0 +1,16 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cedric.alibata.ThirdFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+   <Button
+       android:layout_marginTop="100dp"
+       android:id="@+id/vid"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:onClick="clickmo"
+       android:text="Video"/>
+
+</RelativeLayout>

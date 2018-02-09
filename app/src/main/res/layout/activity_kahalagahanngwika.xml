@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cedric.alibata.Chapters.chp2.Kahalagahanngwika">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KAHALAGAHAN NG WIKA"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:textStyle="bold|italic"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Napakahalaga ng wika sa sangkatauhan. Kung walang wika, maaaring matagal nang pumanaw ang sakatauhan at ang sibilisasyong ating tinatamasa sa ngayon. Sa kabanatanang ito, tinutukoy at ipinaliwanag ang apat na pangunahing halaga ng wika sa tao."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="1.Instrumento ng Komunikasyon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="Ang wika, pasalita man o pasulat, ay pangunahing kasangkapan ng tao sa pagpapahayag ng damdamin at kaisipan. Sa micro level, ang dalawang tao ay nagkakaunawaan sa pamamagitan ng epektibong paggamit ng wika. Ang magkasintahan, halimbawa ay nakapagpapanatili ng relasyon dahil may wikang nagiging instrumento nila ng komunikasyon."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="2.Nag-iingat at Nagpapalaganap ng Kaalaman"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="Maraming kaalaman ang naisasalin sa ibang saling-lahi at napakikinabangan ng ibang lahi dahil sa wika. Ang mga nobela ni Rizal halimbawa, ay naisulat ilang daang taon na ang lumipas ngunit patuloy itong napapakinabangan sa ating panahon dahil may wikang nagkanlong dito at nag-iingat hanggang sa kasalukuyan."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="3.Nagbubukod ng Bansa"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="Nang makihamok ang mga Indones sa kanilang mga mananakop o Olandes, naging battle cry nila ang  Satu Bangsa! Satu Bahasa! Satu Tuna-ir! (Isang Bansa! Isang Wika! Isang Inang Bayan!). Maagang nakilala ng mga Indones ang tungkulin ng wika upang sila’y magbuklod sa kanilang pakikipaglaban nang magkaroon ng kalayaan."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="4.Lumilinang ng Malikhaing Pag-iisip"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="Kapag tayo ay nagbabasa ng maikling kuwento o nobela o di kaya’y kapag tayo’y nanonood ng pelikula, parang nagiging totoo sa ating harapan ang mga tagpo niyon. Maaaring tayo’y napapahalkhak o napapangiti, natatakot o kinikilabutan, nagagalit o naiinis, naaawa o naninibugho."/>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

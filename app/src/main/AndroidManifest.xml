@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.cedric.alibata">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Introduction" />
+        <activity android:name=".Chapters.Chapterone" />
+        <activity android:name=".Try" />
+        <activity android:name=".Chapters.chp1.Wika" />
+        <activity android:name=".Chapters.chp1.Barayti" />
+        <activity android:name=".Chapters.chp1.Antas" />
+        <activity android:name=".Chapters.chp1.Pangwika" />
+        <activity android:name=".Chapters.chp2.Kahalagahanngwika" />
+        <activity android:name=".Chaptertwo" />
+        <activity android:name=".Chapters.chp2.Mgatungkulinngwika" />
+        <activity android:name=".Chapters.Chapterthree" />
+        <activity android:name=".Chapters.chp3.Wikangpambansa" />
+        <activity android:name=".Chapters.chp3.Prosesongpaglinang" />
+        <activity android:name=".Chapters.quiz.Quizlistview" />
+        <activity android:name=".Chapters.quiz.QuizActivity" />
+        <activity android:name=".Chapters.quiz.Complete" />
+        <activity android:name=".Chapters.Announcement" />
+        <activity android:name=".Vd.Videoone" />
+        <activity android:name=".Vd.Vds" />
+        <activity android:name=".Vd.Videotwo" />
+        <activity android:name=".Vd.Videothree" />
+        <activity android:name=".Vd.Videofour" />
+    </application>
+
+</manifest>

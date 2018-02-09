@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cedric.alibata.Chapters.chp1.Pangwika">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IBANG PANG KONSEPTONG PANG WIKA"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:textStyle="bold|italic"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Wikang Pambansa"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Filipino ang pambansang wika ng Pilipinas at mahaba nag kasaysayan ng pag-unlad nito."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Ayon sa Merriam-Webster Dictionary, ang wikang pambansa ay tumutukoy sa isang wikang ginagamit nang pasalita at pasulat ng mga mamamayan ng isang bansa. Ito ang nag-iisang wikang ginagamit batay sa kultura ng lipunan. Nagiging batayan din ito ng identidad o pagkakakilanlan ng grupo ng taong gumagamit nito."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Sa Pilipinas, Filipino ang de jure at de facto na pambansang wika ng bansa. De jure sapagkat legal at naaayon sa batas na Filipino ang pambansang wika. Tinitiyak ng ating konstitusyon ang pagkakaroon at pagpapaunlad ng isang pambansang wika. Matatagpuan sa Artikulo XIV, Seksyon 6-9 ng Konstitusyong 1987 ang mga tiyak na probisyong kaugnay sa wika."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Wikang Pagturo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Nakabatay sa pangkalahatang polisya sa wika at programa sa edukasyon ng isang bansa, ang wikang pagturo ay ang wikang ginagamit na midyum o daluyan ng pagtuturo at pagkatuto sa sistema ng edukasyon. Wikang panturo ang wiakang ginagamit ng guro upang magturo sa mga mag-aaral. Sa pamamagitan ng wikang panturo, nauunawaan ng mga mag-aaral ang iba’t ibang konsepto, teorya, pangkalahatan nilalaman at mga kasanayan sa isang tiyak na asignatura o larangan. Inaasahan din na sa kalaunan ng pag-aaral at nagiging bihasa ang mag-aaral sa wikang panturo na ginagamit sa paaralan at maging siya ay epektibong magagamit ito sa pagkakamit ng lalong mataas na kaalaman."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Wikang Opisyal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Ang wikang opisyal ay ang wikang itinatadhana ng batas bilang wikang gagamitin/ginagamit sa mga opisyal na komuniskasyon ng gobyerno. Ito ang wikang kadalasang ginagamit sa mga opisyal na dokumento na may kinalaman sa korte, lehislatura at pangkalahatang pamamahala sa gobyerno, maging sa sistema ng edukasyon. Usapin ng pagsasakapangyarihan ng isang tiyak na wika sa grupo ng mga taong gumagamit nito ang pagkapili rito bilang opisyal na wika sapagkat may kaakibat itong probelehiyo at adbentahe."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Sa Pilipinas, itinatakda sa Konstitusyong 1987 ang Filipino at Ingles bilang mga opisyal na wika ng bansa. Narito ang mga tiyak na probisyong pang wika sa Artikulo XIV ng Konstituyon."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Bilingguwalismo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Ang bilingguwalismo ay tumutukoy sa kakayahan ng isang taong makapagsalita ng dalawang wika. Maaari ring ilipat ang kosepto sa isang buong kumunidad kung saan ginagamit ng mga mamamayan ang dalwang magkaibang wika o kaya naman ay ang politikal o institusyonal na pagkilala sa dalawang wika."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Multilingguwalismo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Ang multilingguwalismo ay tumutukoy sa kakayahan ng isang indibiduwal na makapagsalita at makaunawa ng iba’t ibang wika. Sa antas ng lipunan, ito ay nangangahulugan ng pagkakaroon ng iba’t ibang wika na sinasalita ng iba’t ibang grupo ng mga tao sa mga lalawigan at rehiyon. Ayon kay Stavenhagen (1990), iilang bansa lamang sa buong mundo ang monolingguwal. Ibig sabihin, mas laganap ang mga lipunan multilingguwal kung hindi man bilingguwal."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:text="Homogenous at Heterohenous na Wika"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Ang pagiging homogenous o hetorogenous ng isang wika ay tumutukoy sa pagkakaroon ng iisang porma o estrandard na anyo nito o kaya ay pagkakaroon ng iba’t ibang porma o barayti."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:text="Unang wika at Ikalawang Wika"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Ang  unang wika na kadalasan ay tinatawag ding katutubong wika o sinusong wika (mother tongue) ay ang wikang natutuhan at ginagamit ng isang tao simula pagkapanganak hanggang sa panohon kung kailan lubos nang naunawaan at nagagamit ng tao ang nasabing wika. Sa ibang lipunan, tinutukoy ang katutubong wika o  mother tongue bilang wika ng iisang etnolingguwistikong grupo kung saan nabibilang ang isang indibiduwal, at hindi ang unang natutuhang wika. Halimbawa, kung ang isang bata ay Iloko at mula sa angkan ng mga taal sa Iloko, ngunit simula pagkapanganak at tinuruan ng wikang Ingles, mananatiling Iloko ang kanyang katutubong wika o mother tongue."/>
+
+
+
+
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

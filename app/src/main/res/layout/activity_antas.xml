@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cedric.alibata.Chapters.chp1.Antas">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ANTAS NG WIKA"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:textStyle="bold|italic"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:text="Ang pagkakaroon ng antas ng wika ay isa pang mahalagang katangian nito. Tulad ng tao, ang wika ay nahahati ein sa iba’t ibang kategorya ayon sa kaantasan nito. Kung tutuusin, ang antas ng wikang madalas na ginagamit ng isang tao ay isang mabisang palatandaan kung anong uri ng tao siya ay kung sa aling antas-panlipunan siya nabibilang."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="1.Pormal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Ito ang mga salitang istandard dahil kinikilala, tinatanggap at ginagamit ng higit na nakararami lalo na ng mga nakapag-aral ng wika."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="A.Pambansa"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Ito ang mga salitang karaniwang ginagamit sa mga aklat pangwika/pambalarila sa lahat ng mga paaralan. Ito rin ang wikang kadalasang ginagamit ng pamahalaan a.t itinuturo sa mga paaralan"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="B.Pampanitikan o Panretorika"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Ito naman ang mga salitang gamitin ng mga manunulat sa kanilang mga akdang pampanitikan. Ito ang mga salitang karaniwang matatayog, malalalim, makulay at masining. Madalas itong gumagamit ng mga idyoma at/o tayutay."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="2.Impormal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="A.Lalawiganin"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text=". Ito ang mga bokabularyong dayalektal. Gamitin ang mga ito sa mga partikular na pook o lalawigan lamang, maliban kung ang mga taal na gumagamit nito magkikita-kita sa ibang lugar dahil natural na nila itong naibubulalas. Makikilala rin ito sa pagkakaroon ng kakaibang tono, o ang tinatawag na marami na punto."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="B.Kolokyal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
+            android:text="Ito’y mga pang-araw-araw na salita na ginagamit sa mga pagkakataong impormal. Maaaring may kagaspangannang kaunti ang mga salitang ito ngunit maaari rin itong maging repinado ayon sa kung sino ang nagsasalita nito. Ang pagpapaikli ng isa, dalawa o higit pang salita lalo na sa mga pasalitang komunikasyon ay mauuri rin sa antas nito. Halimbawa: nasa’n (nasaan), pa’no (paano), sa’kin (sa akin), sa’yo (sa iyo), kelan (kailan), meron (mayroon)."/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="C.Balbal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:text="Ito ang tinatawag sa Ingles na slang. Sa mga pangkat-pangkat nagmumula ang mga ito upang ang mga pangkat ay magkaroon ng sariling codes. Mababang antas ng wika ito, bagamat may mga dalubwikang nagmumungkahi ng higit pang mababang antas, ang antas-bulgar (Halimbawa nito ay mga mura at mga salitang kabastusan)."/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/pormalinpormal"/>
+
+
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

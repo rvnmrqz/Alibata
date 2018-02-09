@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_lesson"
+            android:icon="@drawable/ic_local_library_black_24dp"
+            android:title="Lesson" />
+        <item
+            android:id="@+id/nav_additional_lesson"
+            android:icon="@drawable/ic_picture_as_pdf_black_24dp"
+            android:title="Additional Lesson" />
+
+        <item
+            android:id="@+id/nav_video"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Video" />
+        <item
+            android:id="@+id/nav_quiz"
+            android:icon="@drawable/ic_live_help_black_24dp"
+            android:title="Quiz" />
+
+        <item
+            android:id="@+id/nav_annoucement"
+            android:icon="@drawable/ic_assignment_late_black_24dp"
+            android:title="Annoucement" />
+    </group>
+
+    <item android:title="Other's">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Logout" />
+
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_people_black_24dp"
+                android:title="About Us" />
+        </menu>
+    </item>
+
+</menu>

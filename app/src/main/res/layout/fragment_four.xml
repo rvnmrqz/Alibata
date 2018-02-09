@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cedric.alibata.FourFragment">
+
+    <Button
+
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:text="START QUIZ"
+        android:onClick="clickmo"
+        android:layout_above="@+id/mainmenu"
+        android:layout_alignLeft="@+id/mainmenu"
+        android:layout_alignStart="@+id/mainmenu" />
+    <Button
+
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainmenu"
+        android:text="HIGH SCORE"
+        android:onClick="asd"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

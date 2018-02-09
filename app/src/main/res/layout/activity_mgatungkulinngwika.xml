@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.cedric.alibata.Chapters.chp2.Mgatungkulinngwika">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MGA TUNGKULIN O GAMIT NG WIKA"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:textStyle="bold|italic"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Ayon sa Wikipedia, laguage is a system of communication that enables human to cooperate. Ang depinisyong ito ay nagbibigay-diin sa panlipunang tungkulin g wika at sa katotohanang ginagamit ng tao ang wika upang magpahayag at imanipuleyt ang mga bagay sa kanilang kapaligiran. Ang pananaw na ito ay maiuugnay sa pag-aaral ng wika sa pangksyunal o pragmatik na pamamaraan, maging sa sosyo-lingguwistika at lingguwistika-antropolohiya."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Mahalaga ang gampaning-papel sa wika sa ating buhay ngunit dahil lagi na natin itong ginagamit, hindi natin gaanong naoobsebahan ang tungkulin nito. Natural na lamang sa atin ito, tulad ng ating paghinga at paglakad. Ang pagkakaroon ng wika ay isang katangiang ikinaiba ng tao sa mga hayop. Totoong ang mga hayop ay may sariling paraan ng komunikasyon sa mga kapwa hayop, ngunit iba ang wika ng tao. Sa Laguage, Culture, and Society ni Salzmann (1993), tinukoy niya ang mga ikanahihigit o ikinalalamang ng wika ng tao kaysa sa hayop."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Ang wika ng tao ay kakaiba kung ihahambing sa ibang anyo ng komunikasyon tulad nga ng sa mga hayop. Ang wika ng tao, ayon nga sa Wikipedia, allows human to produce an infinite set of utterances from a finite set of elements, and because the symbols and gramamatical rules of any particular laguage can only be acquired through social interaction."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:text="Sa Explorations in the Functions of Laguage ni M.A.K. Halliday (1973, sa Gonzales-Garcia, 1989), binigyang-diin niya ang pagkakategorya sa wika batay sa mga tungkuling ginagampanan nito sa ating buhay. Ang pitong wungkulin ng wikang tinukoy ni Halliday ay binigyan ng mga halimbawang madalas na gamitin sa pasalita at pasulat na paraan."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="1.Interaksyonal "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="ang tungkulin ng wikang ginagamit ng tao sa pagtatag, pagpapanatili at pagpapatatag ng relasyong sosyal sa kapwa tao. Di nga kasi, ang tao ang nikhang panlipunan (social beings, not only human beings). Sa pasalitang paraan, pinakamahusay na halimbawa nito ang mga pormularyong panlipunan (Magandang umaga, Maligayang kaarawan, Hi/Hello at iba pa), pangungumusta at pagpapalitan ng biro."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="2.Instrumental "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="ang tungkulin ng wikang ginagamit sa pagtungon sa mga pangangailangan. Nagagamit ang tungkulin ito sa pakikiusap o pag-uutos. Ang paggawa ng mga liham-pangangalakal (business letters) ay isang mahusay na halimbawa ng pamamaraan upang matugunan ang ating iba’t ibang pangangailangan. Halimbawa, kung kailangan mo ng trabaho, kailangan mong gumagawa ng application letter, bukod sa ibang requirements."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="3.Regulatori "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="ang tungkulin ng wikang ginagamit sa pagkontrol o paggabay sa kilos o asal ng ibang tao. Sa madaling sabi, ito ang pagsasabi kung ano ang dapat o hindi dapat gawin. Pinakamahusay na halimbawa nito ang pagbibigay ng direksyon, paalala o bahala. Ang mga panuto sa pagsusulit at mga nakapaskil na do’s and don’ts kung saan-saan ay nasa ilalim ng tungkuling ito."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="4.Personal "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="ang tungkulin ng wikang ginagamit sa pagpapahayag ng sariling damdamin o opinyon. Sa mga talakayang pormal o impormal ay gamit na gamit ang tungkuling ito. Samantala, ang pagsulat ng liham sa pagtnugot at ng mga kolum o komentaryo ay mga halimbawa nito sa pagsulat na anyo."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="5.Imahinatibo "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="ang tungkulin ng wikang ginagamit sa pagpapahayag ng imahinasyon sa malikhaing paraan. Makikilala ito sa pamamagitan ng paggamit ng mga idyoma, tayutay, sagisag at simbolismo. Gamitin ang tungkuling ito sa mga akdang pampanitikan tulad ng tula, nobela at maikling katha."/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="6.Heurisik "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="ang tungkulin ng wika na ginagamit sa paghahanap o paghingi ng impormasyon. "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="7.Impormatib "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:text="Impormatib ay ginagamit sa pagbibigay ng impormasyon. Samakatuwid, ang pagtatanong ay heuristik ang pagsagot sa tanong ay impormatib (maliban kung ang tanong ay sinagot sa pamamagitan din ng tanong na kinagawian na yata ng marami). Ang pagsasarbey ay heuristik. Ang pag-uulat, pagtuturo at pagpapasa ng ulat o pamanahong-papel naman ay mga halimbawa ng tungkuling impormatib."/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

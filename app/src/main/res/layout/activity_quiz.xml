@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F8E9"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    tools:context="com.example.cedric.alibata.Chapters.quiz.QuizActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/timeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="text"
+                android:layout_gravity="center"
+                android:textStyle="bold|italic"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/question"
+        android:id="@+id/quiz_question"
+        android:background="@drawable/box_shape"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/radioGroup" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/box_shape"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="5dp"
+
+        android:layout_alignLeft="@+id/quiz_question"
+        android:layout_alignStart="@+id/quiz_question">
+        <RadioButton
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/radio0"
+            android:textSize="15sp"
+            android:text="@string/app_name"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="20dp"/>
+
+        <RadioButton
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/radio1"
+            android:textSize="15sp"
+            android:text="@string/app_name"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="20dp"/>
+
+        <RadioButton
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/radio2"
+            android:textSize="15sp"
+            android:text="@string/app_name"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="20dp"/>
+
+        <RadioButton
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/radio3"
+            android:textSize="15sp"
+
+            android:text="@string/app_name"
+            android:paddingLeft="20dp"/>
+
+    </RadioGroup>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultView"
+        android:layout_below="@+id/radioGroup"
+        android:layout_alignLeft="@+id/radioGroup"
+        android:layout_alignStart="@+id/radioGroup" />
+
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+
+        android:id="@+id/previousquiz"
+        android:text="@string/previous_questions"
+        android:padding="5dp"
+        android:background="@drawable/btnblue"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/resultView"
+        />
+
+</RelativeLayout>
