@@ -4,21 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wars"
-
     tools:context="com.example.cedric.alibata.login">
 
     <ScrollView
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="wrap_content">
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/box_shape"
                     android:layout_gravity="center">
-
                     <EditText
                         android:id="@+id/etUsername"
                         android:layout_width="match_parent"
@@ -45,8 +44,8 @@
                         android:layout_marginRight="10dp"
                         android:inputType="textPassword|number"
                         android:textAlignment="center" />
-
                     <Button
+                        android:layout_marginBottom="12dp"
                         android:onClick="OnLogin"
                         android:fontFamily="sans-serif"
                         android:text="Login"
@@ -58,7 +57,6 @@
                         android:background="@drawable/btnblue"
                         android:layout_height="60sp" />
                 </LinearLayout>
-
     </ScrollView>
 
 </RelativeLayout>
