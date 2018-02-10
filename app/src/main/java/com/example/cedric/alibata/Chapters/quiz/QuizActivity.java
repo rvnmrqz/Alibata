@@ -82,8 +82,7 @@ public class QuizActivity extends ActionBarActivity {
     String domain = "http://alibata-itp.esy.es/";
     AlertDialog.Builder alertBuilder;
     AlertDialog alertDialog;
-    String studentNo;
-
+    String studId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +93,7 @@ public class QuizActivity extends ActionBarActivity {
         quizGroupId = getIntent().getIntExtra("quizGroupID",0);
         alertBuilder = new AlertDialog.Builder(this).setTitle("Loading").setMessage("Please Wait..").setCancelable(false);
         SharedPreferences sharedPreferences = getSharedPreferences(MySharedPref.SHAREDPREFNAME,MODE_PRIVATE);
-        studentNo = sharedPreferences.getString(MySharedPref.STUDNO,"0");
+        studId = sharedPreferences.getString(MySharedPref.STUDID,"0");
 
         Log.wtf("Group Id",quizGroupId+"");
         timeText = (TextView) findViewById(R.id.timeText);
@@ -129,7 +128,6 @@ public class QuizActivity extends ActionBarActivity {
             }
         }.start();
     }
-
     private void btnNextClickListener(){
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,6 +183,63 @@ public class QuizActivity extends ActionBarActivity {
 
     }
 
+
+    private void endQuizAndUploadScore(){
+        countDownTimer.cancel();
+        String url = domain+"App/do_query.php";
+        showWaitDialog(true);
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    showWaitDialog(false);
+
+                    System.out.println("Returned response: "+response);
+                    if(response.trim().equalsIgnoreCase("1")){
+                        Toast.makeText(QuizActivity.this, "New Score Saved", Toast.LENGTH_SHORT).show();
+                        showBarGraphActivity();
+                    }else{
+                        Toast.makeText(QuizActivity.this, "Failed to save new score", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(QuizActivity.this, "Please Check your Connection",Toast.LENGTH_LONG).show();
+                error.printStackTrace();
+                showWaitDialog(false);
+            }
+        })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                String qry = "INSERT INTO tblScores (StudID,quizGroupID,score) VALUES ("+studId+","+quizGroupId+","+score+");";
+                System.out.println("Saving new Score query : "+qry);
+                params.put("qry",qry );
+                return params;
+            }
+        };
+        MySingleton.getInstance(QuizActivity.this).addToRequest(stringRequest);
+
+    }
+    private void showBarGraphActivity(){
+        startActivity(new Intent(QuizActivity.this,Complete.class).putExtra("quizGroupId",quizGroupId));
+        finish();
+    }
+    private void showWaitDialog(boolean show){
+        if(show){
+            alertDialog = alertBuilder.show();
+        }else if(!show && alertDialog!=null){
+            alertDialog.dismiss();
+        }
+    }
+
+
     @Override
     public void onBackPressed(){
         super.onBackPressed();
@@ -208,56 +263,6 @@ public class QuizActivity extends ActionBarActivity {
     protected void onPause() {
         super.onPause();
         countDownTimer.cancel();
-    }
-
-
-    private void endQuizAndUploadScore(){
-        countDownTimer.cancel();
-        String url = domain+"App/get_data.php";
-        showWaitDialog(true);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    showWaitDialog(false);
-                  //  JSONArray jsonArray = new JSONArray(response);
-                 //  JSONObject jsonObject = jsonArray.getJSONObject(0);
-                    System.out.println("Returned response: "+response);
-                    showBarGraphActivity();
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(QuizActivity.this, "Please Check your Connection",Toast.LENGTH_LONG).show();
-                error.printStackTrace();
-                showWaitDialog(false);
-            }
-        })
-        {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("qry", "INSERT INTO tblScores (studentNo,groupQuizId,score) VALUES ("+studentNo+","+quizGroupId+","+score+")");
-                return params;
-            }
-        };
-        MySingleton.getInstance(QuizActivity.this).addToRequest(stringRequest);
-
-    }
-    private void showBarGraphActivity(){
-        startActivity(new Intent(QuizActivity.this,Complete.class).putExtra("quizGroupId",quizGroupId));
-        finish();
-    }
-    private void showWaitDialog(boolean show){
-        if(show){
-            alertDialog = alertBuilder.show();
-        }else if(!show && alertDialog!=null){
-            alertDialog.dismiss();
-        }
     }
 
 

@@ -2,6 +2,8 @@ package com.example.cedric.alibata.Chapters.quiz;
 
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -36,8 +38,7 @@ import java.util.Map;
 public class Quizlistview extends AppCompatActivity {
 
     String domain = "http://alibata-itp.esy.es/";
-    AlertDialog.Builder alertBuilder;
-    AlertDialog alertDialog;
+    ProgressDialog progressDialog;
     String studID;
 
     ListView listView;
@@ -47,13 +48,16 @@ public class Quizlistview extends AppCompatActivity {
     final int count=0;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizlistview);
 
-        alertBuilder = new AlertDialog.Builder(this).setTitle("Checking").setMessage("Please Wait..").setCancelable(false);
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Checking");
+        progressDialog.setMessage("Please wait...");
+
         SharedPreferences sharedPreferences = getSharedPreferences(MySharedPref.SHAREDPREFNAME,MODE_PRIVATE);
         studID = sharedPreferences.getString(MySharedPref.STUDID,"0");
 
@@ -110,7 +114,24 @@ public class Quizlistview extends AppCompatActivity {
 
                     }else{
                         //show bar graph
-                        Toast.makeText(Quizlistview.this, "Already reached re-take limit", Toast.LENGTH_SHORT).show();
+
+                        new AlertDialog.Builder(Quizlistview.this).setTitle("Oops").setMessage("You have already reached re-take limit. Open your quiz history instead?")
+                                .setPositiveButton("Open", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        //pass the quizGroupID
+                                        startActivity(new Intent(Quizlistview.this,Complete.class).putExtra("quizGroupId",quizNo));
+                                    }
+                                })
+                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        //do nothing
+                                    }
+                                })
+                                .show();
+
+
                     }
 
                 } catch (JSONException e) {
@@ -137,13 +158,9 @@ public class Quizlistview extends AppCompatActivity {
 
     }
 
-
     private void showWaitDialog(boolean show){
-       if(show){
-           alertDialog = alertBuilder.show();
-       }else if(!show && alertDialog!=null){
-           alertDialog.dismiss();
-       }
+        if(show) progressDialog.show();
+        else progressDialog.hide();
     }
 
 
