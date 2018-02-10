@@ -1,6 +1,8 @@
 package com.example.cedric.alibata;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -31,12 +33,11 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MainFragment fragment = new MainFragment();
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container,fragment);
-        fragmentTransaction.commit();
-         toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -46,6 +47,15 @@ public class MainActivity extends AppCompatActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        //to set home screen
+        MainFragment fragment = new MainFragment();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container,fragment);
+        fragmentTransaction.commit();
+        navigationView.getMenu().getItem(0).setChecked(true);
+
     }
     public void clickmo(View v){
         switch (v.getId()){
@@ -157,12 +167,27 @@ public class MainActivity extends AppCompatActivity
         }
 
         else if(id == R.id.nav_logout){
-            SharedPreferences sharedPreferences = getSharedPreferences("GAME_DATA",MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("log","");
-            editor.commit();
-            finish();
-            startActivity(new Intent(MainActivity.this,login.class));
+
+            new AlertDialog.Builder(this).setTitle("Log-out").setMessage("Continue?")
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            SharedPreferences sharedPreferences = getSharedPreferences("GAME_DATA",MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.clear();
+                            editor.commit();
+                            finish();
+                            startActivity(new Intent(MainActivity.this,login.class));
+                        }
+                    })
+                    .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //do nothing
+                        }
+                    })
+            .show();
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
