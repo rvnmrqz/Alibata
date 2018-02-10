@@ -42,6 +42,7 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getWindow().setBackgroundDrawableResource(R.drawable.warrrs);
         builder = new AlertDialog.Builder(login.this);
         etUsername = (EditText)findViewById(R.id.etUsername);
         etPassword = (EditText)findViewById(R.id.etPassword);
