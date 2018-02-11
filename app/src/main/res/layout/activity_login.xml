@@ -6,57 +6,64 @@
     android:layout_height="match_parent"
     tools:context="com.example.cedric.alibata.login">
 
+
     <ScrollView
-        android:layout_marginLeft="14dp"
-        android:layout_marginRight="14dp"
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/box_shape"
-                    android:layout_gravity="center">
-                    <EditText
-                        android:id="@+id/etUsername"
-                        android:layout_width="match_parent"
-                        android:layout_height="50sp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="40sp"
-                        android:ems="20"
-                        android:hint="STUDENT NUMBER"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:textColor="#000000"
-                        android:inputType="number"
-                        android:textAlignment="center" />
-                    <EditText
-                        android:id="@+id/etPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="50sp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="40sp"
-                        android:ems="20"
-                        android:hint="YYYY-MM-DD"
-                        android:textColor="#000000"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:inputType="textPassword|number"
-                        android:textAlignment="center" />
-                    <Button
-                        android:layout_marginBottom="12dp"
-                        android:onClick="OnLogin"
-                        android:fontFamily="sans-serif"
-                        android:text="Login"
-                        android:layout_marginTop="50sp"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_width="match_parent"
-                        android:background="@drawable/btnblue"
-                        android:layout_height="60sp" />
-                </LinearLayout>
+        <LinearLayout
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+            <TextView
+                android:text="ALIBATA"
+                android:textStyle="bold|italic"
+                android:textColor="@color/colorPrimary"
+                android:textSize="60sp"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:layout_marginTop="16sp"
+                android:hint="Student Number"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="#000000" />
+
+            <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+                android:id="@+id/etPassword"
+                android:fontFamily="sans-serif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="20"
+                android:layout_marginTop="16sp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textAlignment="center"
+                android:textColor="#000000" />
+
+            <Button
+                android:drawableRight="@drawable/ic_login"
+                android:padding="8dp"
+                android:layout_marginTop="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:layout_gravity="center"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="sans-serif"
+                android:onClick="OnLogin"
+                android:text="           Login" />
+
+        </LinearLayout>
     </ScrollView>
+
 
 </RelativeLayout>

@@ -17,13 +17,14 @@ import java.util.Locale;
 
 public class Introduction extends AppCompatActivity {
     Button Play;
+    MediaPlayer mP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction);
         Play = (Button)findViewById(R.id.button_play);
-        final MediaPlayer mP = MediaPlayer.create(Introduction.this,R.raw.intro);
+        mP = MediaPlayer.create(Introduction.this,R.raw.intro);
         Play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,8 +49,9 @@ public class Introduction extends AppCompatActivity {
         finish();
         return super.onOptionsItemSelected(item);
     }
-    @Override
-    public void onBackPressed(){
-
+    protected void onDestroy() {
+        //put stop playing code here
+        if(mP.isPlaying()) mP.stop();
+        super.onDestroy();
     }
 }

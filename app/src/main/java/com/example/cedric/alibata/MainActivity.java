@@ -5,8 +5,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.MenuItemCompat;
+import android.view.Gravity;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -27,8 +30,16 @@ import com.example.cedric.alibata.Vd.Vds;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+
+    public static Context staticContext;
     NavigationView navigationView = null;
     Toolbar toolbar = null;
+
+    //navigations
+    static TextView nav_announcement;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +50,7 @@ public class MainActivity extends AppCompatActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        staticContext = this;
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -49,49 +61,70 @@ public class MainActivity extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        SharedPreferences sharedPreferences  = getSharedPreferences(MySharedPref.SHAREDPREFNAME,MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(MySharedPref.SHAREDPREFNAME, MODE_PRIVATE);
+        editor = sharedPreferences.edit();
 
         //to set sliding nav student's name
         View headerView = navigationView.getHeaderView(0);
         TextView txtname = (TextView) headerView.findViewById(R.id.nav_name);
-        txtname.setText(sharedPreferences.getString(MySharedPref.NAME,""));
+        txtname.setText(sharedPreferences.getString(MySharedPref.NAME, ""));
 
 
         //to set home screen
         MainFragment fragment = new MainFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container,fragment);
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
         navigationView.getMenu().getItem(0).setChecked(true);
 
+        nav_announcement = (TextView) MenuItemCompat.getActionView(navigationView.getMenu().findItem(R.id.nav_annoucement));
+
+        startService(new Intent(this, ServiceNotifications.class));
+
+        setUnopenedBadge(sharedPreferences.getInt(MySharedPref.NOTIFCOUNT,0)+"");
     }
-    public void clickmo(View v){
-        switch (v.getId()){
+
+    public static void setUnopenedBadge(String count){
+        nav_announcement.setGravity(Gravity.CENTER_VERTICAL);
+        nav_announcement.setTypeface(null, Typeface.BOLD);
+        nav_announcement.setTextColor(staticContext.getResources().getColor(R.color.colorAccent));
+
+        if(count.equalsIgnoreCase("0")) count="";
+        nav_announcement.setText(count);
+
+        System.out.println("SetUnopenedBadge: "+count);
+    }
+
+
+
+    public void clickmo(View v) {
+        switch (v.getId()) {
             case R.id.introdction:
-                startActivity(new Intent(this,Introduction.class));
+                startActivity(new Intent(this, Introduction.class));
                 break;
             case R.id.chaptrone:
-                startActivity(new Intent(this,Chapterone.class));
+                startActivity(new Intent(this, Chapterone.class));
                 break;
             case R.id.button:
-              startActivity(new Intent(this,Try.class));
+                startActivity(new Intent(this, Try.class));
                 break;
             case R.id.chaptrtwo:
-                startActivity(new Intent(this,Chaptertwo.class));
+                startActivity(new Intent(this, Chaptertwo.class));
                 break;
             case R.id.chaptrthree:
-                startActivity(new Intent(this,Chapterthree.class));
+                startActivity(new Intent(this, Chapterthree.class));
                 break;
-           // case R.id.button2:
-           //     startActivity(new Intent(this,Quizlistview.class));
-           //     break;
-           // case R.id.btnannounce:
-             //   startActivity(new Intent(this,Announcement.class));
-             //   break;
+            // case R.id.button2:
+            //     startActivity(new Intent(this,Quizlistview.class));
+            //     break;
+            // case R.id.btnannounce:
+            //   startActivity(new Intent(this,Announcement.class));
+            //   break;
 
 
         }
     }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -134,7 +167,7 @@ public class MainActivity extends AppCompatActivity
             // Handle the lesson action
             MainFragment fragment = new MainFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container,fragment);
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
 
         } else if (id == R.id.nav_additional_lesson) {
@@ -142,7 +175,7 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container,secondFragment);
             fragmentTransaction.commit();*/
-            Intent in = new Intent(this,Try.class);
+            Intent in = new Intent(this, Try.class);
             startActivity(in);
 
         } else if (id == R.id.nav_video) {
@@ -150,7 +183,7 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container,thirdFragment);
             fragmentTransaction.commit();*/
-            Intent in = new Intent(this,Vds.class);
+            Intent in = new Intent(this, Vds.class);
             startActivity(in);
 
 
@@ -159,9 +192,8 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container,fourFragment);
             fragmentTransaction.commit();*/
-            Intent in = new Intent(this,Quizlistview.class);
+            Intent in = new Intent(this, Quizlistview.class);
             startActivity(in);
-
 
 
         } else if (id == R.id.nav_annoucement) {
@@ -169,23 +201,25 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container,fifthFragment);
             fragmentTransaction.commit();*/
-            Intent in = new Intent(this,Announcement.class);
+            editor.putInt(MySharedPref.NOTIFCOUNT,0);
+            editor.commit();
+            setUnopenedBadge("");
+            Intent in = new Intent(this, Announcement.class);
             startActivity(in);
 
-        }
-
-        else if(id == R.id.nav_logout){
+        } else if (id == R.id.nav_logout) {
 
             new AlertDialog.Builder(this).setTitle("Log-out").setMessage("Continue?")
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            SharedPreferences sharedPreferences = getSharedPreferences("GAME_DATA",MODE_PRIVATE);
+                            SharedPreferences sharedPreferences = getSharedPreferences("GAME_DATA", MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.clear();
                             editor.commit();
                             finish();
-                            startActivity(new Intent(MainActivity.this,login.class));
+                            stopService(new Intent(MainActivity.this, ServiceNotifications.class));
+                            startActivity(new Intent(MainActivity.this, login.class));
                         }
                     })
                     .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -194,7 +228,7 @@ public class MainActivity extends AppCompatActivity
                             //do nothing
                         }
                     })
-            .show();
+                    .show();
 
         }
 

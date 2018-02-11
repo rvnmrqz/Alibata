@@ -24,8 +24,10 @@ public class Pangwika extends AppCompatActivity {
         finish();
         return super.onOptionsItemSelected(item);
     }
-    @Override
-    public void onBackPressed(){
+
+    protected void onDestroy() {
+        //put stop playing code here
+        super.onDestroy();
 
     }
 }

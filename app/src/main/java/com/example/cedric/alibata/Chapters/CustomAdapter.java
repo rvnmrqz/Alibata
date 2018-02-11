@@ -18,17 +18,13 @@ import java.util.ArrayList;
 public class CustomAdapter extends ArrayAdapter<Announce> {
 
 
-
     int groupid;
 
     ArrayList<Announce> records;
 
     Context context;
 
-
-
-    public CustomAdapter(Context context, int vg, int id, ArrayList<Announce>
-            records) {
+    public CustomAdapter(Context context, int vg, int id, ArrayList<Announce> records) {
 
         super(context, vg, id, records);
 
@@ -39,20 +35,16 @@ public class CustomAdapter extends ArrayAdapter<Announce> {
         this.records = records;
 
 
-
     }
 
-
-
     public View getView(int position, View convertView, ViewGroup parent) {
-
 
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View itemView = inflater.inflate(groupid, parent, false);
 
-       // TextView textanid = (TextView) itemView.findViewById(R.id.anid);
+        // TextView textanid = (TextView) itemView.findViewById(R.id.anid);
 
         //textanid.setText(records.get(position).getpSubject());
 

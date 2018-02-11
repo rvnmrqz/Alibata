@@ -32,9 +32,9 @@ public class login extends AppCompatActivity {
 
     private static final String DEFAULT = "";
     Button btnLogin,btnregister;
-    EditText etUsername, etPassword;
+    EditText etUsername;
+    com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText etPassword;
     String domain  = "http://alibata-itp.esy.es/";
-    String login_url =("http://alibata-itp.esy.es/Backend/login.php");
     AlertDialog.Builder builder;
 
     SharedPreferences sharedPreferences;
@@ -43,26 +43,30 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getWindow().setBackgroundDrawableResource(R.drawable.warrrs);
+
+       getSupportActionBar().hide();
+       // getWindow().setBackgroundDrawableResource(R.drawable.warrrs);
+
         builder = new AlertDialog.Builder(login.this);
         etUsername = (EditText)findViewById(R.id.etUsername);
-        etPassword = (EditText)findViewById(R.id.etPassword);
+        etPassword = (com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText)findViewById(R.id.etPassword);
 
        sharedPreferences=getSharedPreferences(MySharedPref.SHAREDPREFNAME, Context.MODE_PRIVATE);
         String log=sharedPreferences.getString(MySharedPref.STUDID,DEFAULT);
         if(!log.equals(DEFAULT)){
           openMain();
         }
-
     }
 
     public void OnLogin(View view){
 
         final String username = etUsername.getText().toString();
         final String password = etPassword.getText().toString();
-        if(username.equals("")||password.equals("")){
-            builder.setTitle("Something went Wrong");
-            displayAlert("Enter Username and Password");
+        if(username.trim().equals("")){
+            etUsername.setError("This field must not be empty");
+        }
+        if(password.trim().equalsIgnoreCase("")){
+            etPassword.setError("This field must not be empty");
         }
         else
         {
@@ -85,7 +89,7 @@ public class login extends AppCompatActivity {
                             }
                         }else{
                             //wrong info
-                            displayAlert("Wrong Login Details");
+                            displayAlert("Oops","Login info is incorrect");
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -112,7 +116,8 @@ public class login extends AppCompatActivity {
         }
     }
 
-    public void displayAlert(String message){
+    public void displayAlert(String title,String message){
+        builder.setTitle(title);
         builder.setMessage(message);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
@@ -129,68 +134,6 @@ public class login extends AppCompatActivity {
         editor.putString(MySharedPref.STUDNO, studentid);
         editor.putString(MySharedPref.NAME,(fname+" "+lname));
         editor.commit();
-    }
-
-
-    private void oldLogin(){
-        final String username = etUsername.getText().toString();
-        final String password = etPassword.getText().toString();
-        if(username.equals("")||password.equals("")){
-            builder.setTitle("Something went Wrong");
-            displayAlert("Enter Username and Password");
-        }
-        else
-        {
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, login_url, new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    try {
-                        JSONArray jsonArray = new JSONArray(response);
-                        JSONObject jsonObject = jsonArray.getJSONObject(0);
-                        String code = jsonObject.getString("code");
-                        if (code.equals("Wrong Credentials"))
-                        {
-                            builder.setTitle("Login Error");
-                            displayAlert(jsonObject.getString("message"));
-                        }
-                        if(code.equals("AccountNotRegistered"))
-                        {
-                            builder.setTitle("Login Error....");
-                            displayAlert(jsonObject.getString("message"));
-                        }
-                        if(code.equals("AccountNotAccepted"))
-                        {
-                            builder.setTitle("Login Error....");
-                            displayAlert(jsonObject.getString("message"));
-                        }
-                        if(code.equals("Login_Success"))
-                        {
-
-                         //   save();
-                            openMain();
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(login.this, "Please Check your Connection",Toast.LENGTH_LONG).show();
-                    error.printStackTrace();
-                }
-            })
-            {
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
-                    Map<String, String> params = new HashMap<String, String>();
-                    params.put("etUsername", username);
-                    params.put("etPassword", password);
-                    return params;
-                }
-            };
-            MySingleton.getInstance(login.this).addToRequest(stringRequest);
-        }
     }
 
     private void openMain(){

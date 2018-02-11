@@ -13,18 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity
-            android:name=".login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".login"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Introduction" />
         <activity android:name=".Chapters.Chapterone" />
         <activity android:name=".Try" />
@@ -41,12 +34,26 @@
         <activity android:name=".Chapters.quiz.Quizlistview" />
         <activity android:name=".Chapters.quiz.QuizActivity" />
         <activity android:name=".Chapters.quiz.Complete" />
-        <activity android:name=".Chapters.Announcement" />
+        <activity
+            android:name=".Chapters.Announcement"
+            android:launchMode="singleTop" />
         <activity android:name=".Vd.Videoone" />
         <activity android:name=".Vd.Vds" />
         <activity android:name=".Vd.Videotwo" />
         <activity android:name=".Vd.Videothree" />
         <activity android:name=".Vd.Videofour" />
+
+        <service
+            android:name=".ServiceNotifications"
+            android:exported="false" />
+
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

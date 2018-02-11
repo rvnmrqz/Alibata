@@ -56,8 +56,5 @@ public class Chaptertwo extends AppCompatActivity {
         finish();
         return super.onOptionsItemSelected(item);
     }
-    @Override
-    public void onBackPressed(){
 
-    }
 }

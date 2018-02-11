@@ -48,6 +48,5 @@ public class Videoone extends YouTubeBaseActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
     }
 }

@@ -24,8 +24,5 @@ public class Mgatungkulinngwika extends AppCompatActivity {
         finish();
         return super.onOptionsItemSelected(item);
     }
-    @Override
-    public void onBackPressed(){
 
-    }
 }

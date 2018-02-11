@@ -24,8 +24,5 @@ public class Kahalagahanngwika extends AppCompatActivity {
         finish();
         return super.onOptionsItemSelected(item);
     }
-    @Override
-    public void onBackPressed(){
 
-    }
 }
