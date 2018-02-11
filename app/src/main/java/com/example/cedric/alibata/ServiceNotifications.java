@@ -209,23 +209,26 @@ public class ServiceNotifications extends Service {
             timerTask = new TimerTask() {
                 @Override
                 public void run() {
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (continueCount) {
-                                tick++;
-                                if (tick == maxCount) {
-                                    if (isNetworkAvailable()) {
-                                        doWork();
-                                    } else {
-                                        Log.wtf("tick==maxcount", "no network available, restarting");
-                                        restartCounting();
+                    if(handler!=null){
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                System.out.println("running...");
+                                if (continueCount) {
+                                    tick++;
+                                    if (tick == maxCount) {
+                                        if (isNetworkAvailable()) {
+                                            doWork();
+                                        } else {
+                                            Log.wtf("tick==maxcount", "no network available, restarting");
+                                            restartCounting();
+                                        }
                                     }
                                 }
+                                Log.wtf("service_timer", "Timer Tick: " + tick);
                             }
-                            Log.wtf("service_timer", "Timer Tick: " + tick);
-                        }
-                    });
+                        });
+                    }
                 }
             };
             Log.wtf("service_initializeTimer", "Timer initialized");
