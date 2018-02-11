@@ -59,8 +59,8 @@ import java.util.Map;
 public class QuizActivity extends ActionBarActivity {
 
     Button btnNext;
+    TextView txtQuizNumber;
     private TextView quizQuestion;
-    private TextView result;
     private RadioGroup radioGroup;
     private RadioButton optionOne;
     private RadioButton optionTwo;
@@ -97,6 +97,7 @@ public class QuizActivity extends ActionBarActivity {
 
         Log.wtf("Group Id",quizGroupId+"");
         timeText = (TextView) findViewById(R.id.timeText);
+        txtQuizNumber = (TextView) findViewById(R.id.txtQuizNumber);
         quizQuestion = (TextView) findViewById(R.id.quiz_question);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         optionOne = (RadioButton) findViewById(R.id.radio0);
@@ -105,7 +106,6 @@ public class QuizActivity extends ActionBarActivity {
         optionFour = (RadioButton) findViewById(R.id.radio3);
 
         btnNext = (Button) findViewById(R.id.btnNext);
-        result = (TextView) findViewById(R.id.resultView);
         AsyncJsonObject asyncObject = new AsyncJsonObject();
         asyncObject.execute("");
 
@@ -145,7 +145,6 @@ public class QuizActivity extends ActionBarActivity {
         if(userSelection == correctAnswerForQuestion){
             ++score;
             System.out.println("Correct Answer, score: "+score);
-            Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
         }
 
         nextQuestion();
@@ -159,13 +158,12 @@ public class QuizActivity extends ActionBarActivity {
 
         System.out.println("Next Question\nCurrentNo: "+currentQuizQuestion);
         if(currentQuizQuestion <= quizCount){
-            System.out.println("New Question displayed");
-            result.setText(" ");
             btnNext.setVisibility(Button.VISIBLE);
             optionOne.setTextColor(Color.BLACK);
             optionTwo.setTextColor(Color.BLACK);
             optionThree.setTextColor(Color.BLACK);
             optionFour.setTextColor(Color.BLACK);
+            txtQuizNumber.setText("#"+currentQuizQuestion);
             firstQuestion = parsedObject.get(currentQuizQuestion-1);
             quizQuestion.setText(firstQuestion.getQuestion());
             String[] possibleAnswers = firstQuestion.getAnswers().split(",");
@@ -179,10 +177,7 @@ public class QuizActivity extends ActionBarActivity {
             System.out.println("End of Question, go to complete: Score: "+score);
             endQuizAndUploadScore();
         }
-
-
     }
-
 
     private void endQuizAndUploadScore(){
         countDownTimer.cancel();
@@ -218,7 +213,7 @@ public class QuizActivity extends ActionBarActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                String qry = "INSERT INTO tblScores (StudID,quizGroupID,score) VALUES ("+studId+","+quizGroupId+","+score+");";
+                String qry = "INSERT INTO tblScores (StudID,quizGroupID,score,datetime) VALUES ("+studId+","+quizGroupId+","+score+",NOW());";
                 System.out.println("Saving new Score query : "+qry);
                 params.put("qry",qry );
                 return params;
@@ -310,6 +305,7 @@ public class QuizActivity extends ActionBarActivity {
             }
             quizCount = parsedObject.size();
             firstQuestion = parsedObject.get(0);
+            txtQuizNumber.setText("#"+currentQuizQuestion);
             quizQuestion.setText(firstQuestion.getQuestion());
             String[] possibleAnswers = firstQuestion.getAnswers().split(",");
             optionOne.setText(possibleAnswers[0]);
