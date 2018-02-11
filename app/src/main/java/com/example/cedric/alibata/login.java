@@ -1,5 +1,6 @@
 package com.example.cedric.alibata;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -38,6 +39,7 @@ public class login extends AppCompatActivity {
     AlertDialog.Builder builder;
 
     SharedPreferences sharedPreferences;
+    ProgressDialog pd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,10 @@ public class login extends AppCompatActivity {
         etUsername = (EditText)findViewById(R.id.etUsername);
         etPassword = (com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText)findViewById(R.id.etPassword);
 
+        pd = new ProgressDialog(this);
+        pd.setTitle("Logging-in");
+        pd.setMessage("Plase wait...");
+
        sharedPreferences=getSharedPreferences(MySharedPref.SHAREDPREFNAME, Context.MODE_PRIVATE);
         String log=sharedPreferences.getString(MySharedPref.STUDID,DEFAULT);
         if(!log.equals(DEFAULT)){
@@ -60,6 +66,7 @@ public class login extends AppCompatActivity {
 
     public void OnLogin(View view){
 
+        showLoading(true);
         final String username = etUsername.getText().toString();
         final String password = etPassword.getText().toString();
         if(username.trim().equals("")){
@@ -74,18 +81,25 @@ public class login extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     try {
+                        showLoading(false);
                         System.out.println("Login Response: "+response);
 
-                        if(!response.trim().equalsIgnoreCase("0")){
+                        if(!response.trim().equalsIgnoreCase("0") || !response.trim().equalsIgnoreCase("-1")){
                             JSONArray jsonArray = new JSONArray(response);
                             if(jsonArray.length()>0){
                                 JSONObject jsonObject = jsonArray.getJSONObject(0);
-                                String StudID = jsonObject.getString("StudID");
-                                String StudentID = jsonObject.getString("StudentID");
-                                String StudentFirstname = jsonObject.getString("StudentFirstname");
-                                String StudentLastname = jsonObject.getString("StudentLastname");
-                                save(StudID,StudentID,StudentFirstname,StudentLastname);
-                                openMain();
+                                String studId =jsonObject.getString("StudID");
+                                if(studId.trim().length() != 0 && !studId.equalsIgnoreCase("null")){
+                                    String StudID = jsonObject.getString("StudID");
+                                    String StudentID = jsonObject.getString("StudentID");
+                                    String StudentFirstname = jsonObject.getString("StudentFirstname");
+                                    String StudentLastname = jsonObject.getString("StudentLastname");
+                                    String lastNotifID = jsonObject.getString("lastnotifid");
+                                    save(StudID,StudentID,StudentFirstname,StudentLastname,lastNotifID);
+                                    openMain();
+                                }else{
+                                    displayAlert("Oops","Login info is incorrect");
+                                }
                             }
                         }else{
                             //wrong info
@@ -99,6 +113,7 @@ public class login extends AppCompatActivity {
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
+                    showLoading(false);
                     Toast.makeText(login.this, "Please Check your Connection",Toast.LENGTH_LONG).show();
                     error.printStackTrace();
                 }
@@ -128,16 +143,31 @@ public class login extends AppCompatActivity {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
-    public void save(String studid, String studentid, String fname, String lname){
+    public void save(String studid, String studentid, String fname, String lname, String lastNotifID){
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(MySharedPref.STUDID,studid);
         editor.putString(MySharedPref.STUDNO, studentid);
         editor.putString(MySharedPref.NAME,(fname+" "+lname));
+        editor.putInt(MySharedPref.LASTNOTIFID,Integer.parseInt(lastNotifID));
         editor.commit();
+    }
+
+    private void showLoading(boolean show){
+        if(pd!=null){
+            if(show) pd.show();
+            else pd.hide();
+        }
     }
 
     private void openMain(){
         finish();
         startActivity(new Intent(login.this,MainActivity.class));
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(pd!=null) pd.dismiss();
+        super.onDestroy();
+
     }
 }

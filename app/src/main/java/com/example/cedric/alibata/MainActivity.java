@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity
 
         startService(new Intent(this, ServiceNotifications.class));
 
-        setUnopenedBadge(sharedPreferences.getInt(MySharedPref.NOTIFCOUNT,0)+"");
+        System.out.println("onCreate");
     }
 
     public static void setUnopenedBadge(String count){
@@ -95,7 +95,12 @@ public class MainActivity extends AppCompatActivity
         System.out.println("SetUnopenedBadge: "+count);
     }
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        System.out.println("onResume");
+        setUnopenedBadge(sharedPreferences.getInt(MySharedPref.NOTIFCOUNT,0)+"");
+    }
 
     public void clickmo(View v) {
         switch (v.getId()) {
@@ -133,28 +138,6 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

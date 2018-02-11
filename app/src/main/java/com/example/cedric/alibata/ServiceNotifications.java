@@ -127,7 +127,7 @@ public class ServiceNotifications extends Service {
 
     private int getUnopenedNotif() {
         try {
-            return sharedPreferences.getInt(MySharedPref.LASTNOTIFID, 0);
+            return sharedPreferences.getInt(MySharedPref.NOTIFCOUNT, 0);
         } catch (Exception e) {
             Log.wtf("USER_NotificationService", "getSharedPrefMaxNotifID Exception: " + e.getMessage());
         } catch (Throwable t) {
