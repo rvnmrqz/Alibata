@@ -31,6 +31,10 @@
     <item android:title="Other's">
         <menu>
             <item
+                android:id="@+id/nav_changePass"
+                android:icon="@drawable/ic_sec"
+                android:title="Change Password" />
+            <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Logout" />

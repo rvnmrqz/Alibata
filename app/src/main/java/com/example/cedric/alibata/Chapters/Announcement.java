@@ -58,6 +58,7 @@ public class Announcement extends AppCompatActivity {
 
         layoutListview = (ScrollView) findViewById(R.id.layoutList);
         layoutLoading = (LinearLayout) findViewById(R.id.layoutLoading);
+
         loadingProgressDialog = (ProgressBar) findViewById(R.id.loadingProgress);
         loadingTextView = (TextView) findViewById(R.id.loadingTextView);
 

@@ -190,8 +190,11 @@ public class MainActivity extends AppCompatActivity
             Intent in = new Intent(this, Announcement.class);
             startActivity(in);
 
-        } else if (id == R.id.nav_logout) {
-
+        }
+        else if(id == R.id.nav_changePass){
+            startActivity(new Intent(MainActivity.this,ChangePassword.class));
+        }
+        else if (id == R.id.nav_logout) {
             new AlertDialog.Builder(this).setTitle("Log-out").setMessage("Continue?")
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                         @Override
