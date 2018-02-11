@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
@@ -68,6 +69,11 @@ public class Complete extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complete);
+
+        if(getSupportActionBar()!=null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Getting Scores");
@@ -187,10 +193,6 @@ public class Complete extends AppCompatActivity {
         barChart.getAxisRight().setDrawAxisLine(false);
         barChart.getAxisRight().setDrawLabels(false);
 
-       // barChart.setVisibleYRangeMaximum(10, YAxis.AxisDependency.LEFT);
-       // barChart.getAxisRight().setAxisMinimum(10);
-       // barChart.setVisibleYRange(0,10, YAxis.AxisDependency.LEFT);
-
 
 
         BarDataSet  barDataSet = new BarDataSet(gradesEntries,"Scores");
@@ -205,6 +207,14 @@ public class Complete extends AppCompatActivity {
         else progressDialog.hide();
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==android.R.id.home);
+        {
+            super.onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
 
+    }
 
 }

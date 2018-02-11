@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.cedric.alibata.Chapters.Announcement;
 import com.example.cedric.alibata.Chapters.Chapterone;
@@ -47,6 +48,13 @@ public class MainActivity extends AppCompatActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        SharedPreferences sharedPreferences  = getSharedPreferences(MySharedPref.SHAREDPREFNAME,MODE_PRIVATE);
+
+        //to set sliding nav student's name
+        View headerView = navigationView.getHeaderView(0);
+        TextView txtname = (TextView) headerView.findViewById(R.id.nav_name);
+        txtname.setText(sharedPreferences.getString(MySharedPref.NAME,""));
 
 
         //to set home screen

@@ -64,11 +64,8 @@ public class Announcement extends AppCompatActivity {
         super.onStart();
 
         //execute background task
-
         BackTask bt=new BackTask();
-
         bt.execute();
-
 
     }
     private class BackTask extends AsyncTask<Void,Void,Void> {
