@@ -66,7 +66,6 @@ public class login extends AppCompatActivity {
 
     public void OnLogin(View view){
 
-        showLoading(true);
         final String username = etUsername.getText().toString();
         final String password = etPassword.getText().toString();
         if(username.trim().equals("")){
@@ -77,6 +76,7 @@ public class login extends AppCompatActivity {
         }
         else
         {
+            showLoading(true);
             StringRequest stringRequest = new StringRequest(Request.Method.POST, domain+"App/applogin.php", new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {

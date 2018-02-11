@@ -102,33 +102,6 @@ public class MainActivity extends AppCompatActivity
         setUnopenedBadge(sharedPreferences.getInt(MySharedPref.NOTIFCOUNT,0)+"");
     }
 
-    public void clickmo(View v) {
-        switch (v.getId()) {
-            case R.id.introdction:
-                startActivity(new Intent(this, Introduction.class));
-                break;
-            case R.id.chaptrone:
-                startActivity(new Intent(this, Chapterone.class));
-                break;
-            case R.id.button:
-                startActivity(new Intent(this, Try.class));
-                break;
-            case R.id.chaptrtwo:
-                startActivity(new Intent(this, Chaptertwo.class));
-                break;
-            case R.id.chaptrthree:
-                startActivity(new Intent(this, Chapterthree.class));
-                break;
-            // case R.id.button2:
-            //     startActivity(new Intent(this,Quizlistview.class));
-            //     break;
-            // case R.id.btnannounce:
-            //   startActivity(new Intent(this,Announcement.class));
-            //   break;
-
-
-        }
-    }
 
     @Override
     public void onBackPressed() {
@@ -199,12 +172,12 @@ public class MainActivity extends AppCompatActivity
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            stopService(new Intent(MainActivity.this, ServiceNotifications.class));
                             SharedPreferences sharedPreferences = getSharedPreferences("GAME_DATA", MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.clear();
                             editor.commit();
                             finish();
-                            stopService(new Intent(MainActivity.this, ServiceNotifications.class));
                             startActivity(new Intent(MainActivity.this, login.class));
                         }
                     })
