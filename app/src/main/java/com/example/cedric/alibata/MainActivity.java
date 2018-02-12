@@ -1,5 +1,6 @@
 package com.example.cedric.alibata;
 
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -79,7 +80,9 @@ public class MainActivity extends AppCompatActivity
 
         nav_announcement = (TextView) MenuItemCompat.getActionView(navigationView.getMenu().findItem(R.id.nav_annoucement));
 
-        startService(new Intent(this, ServiceNotifications.class));
+        if(!isMyServiceRunning(ServiceNotifications.class)) {
+            startService(new Intent(this, ServiceNotifications.class));
+        }
 
         System.out.println("onCreate");
     }
@@ -179,6 +182,7 @@ public class MainActivity extends AppCompatActivity
                             editor.commit();
                             finish();
                             startActivity(new Intent(MainActivity.this, login.class));
+
                         }
                     })
                     .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
@@ -195,4 +199,16 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+    private boolean isMyServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

@@ -29,7 +29,6 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.example.cedric.alibata.MainActivity;
 import com.example.cedric.alibata.MySharedPref;
 import com.example.cedric.alibata.MySingleton;
 import com.example.cedric.alibata.R;

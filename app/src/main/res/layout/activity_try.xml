@@ -11,17 +11,7 @@
     android:layout_marginRight="5dp"
     tools:context="com.example.cedric.alibata.Try">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Show files on server"
-        android:id="@+id/button"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+
 
     <ListView
         android:layout_width="wrap_content"
@@ -29,7 +19,6 @@
         android:id="@+id/listView"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/button" />
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

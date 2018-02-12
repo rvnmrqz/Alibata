@@ -220,7 +220,7 @@ public class ServiceNotifications extends Service {
                                         if (isNetworkAvailable()) {
                                             doWork();
                                         } else {
-                                            Log.wtf("tick==maxcount", "no network available, restarting");
+                                            System.out.println("Internet not available");
                                             restartCounting();
                                         }
                                     }
@@ -258,7 +258,7 @@ public class ServiceNotifications extends Service {
 
     private void doWork() {
         try {
-
+            System.out.println("DO WORK");
             String url = domain + "App/notifChecker.php";
 
             requestQueue = Volley.newRequestQueue(this);
@@ -304,12 +304,12 @@ public class ServiceNotifications extends Service {
                     return params;
                 }
             };
-            int socketTimeout = 50000;
+            /*int socketTimeout = 50000;
             RetryPolicy policy = new DefaultRetryPolicy(socketTimeout,
                     DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                     DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
             stringRequest.setRetryPolicy(policy);
-            stringRequest.setShouldCache(false);
+            stringRequest.setShouldCache(false);*/
             requestQueue.add(stringRequest);
 
         } catch (Exception e) {

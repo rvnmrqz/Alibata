@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -33,7 +34,7 @@ import okhttp3.Response;
 
 public class Try extends AppCompatActivity {
 
-    private Button button;
+
     private ListView listView;
     private ArrayAdapter arrayAdapter;
     private ArrayList<String> files_on_server = new ArrayList<>();
@@ -42,35 +43,18 @@ public class Try extends AppCompatActivity {
     private ProgressDialog progressDialog;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_try);
-        permission_check();
-    }
-    private void permission_check() {
-        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},100);
-                return;
-            }
+        if(getSupportActionBar()!=null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        initialize();
-    }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if(requestCode == 100 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-            initialize();
-        }else {
-            permission_check();
-        }
-    }
-
-    private void initialize() {
-        button = (Button) findViewById(R.id.button);
         listView = (ListView) findViewById(R.id.listView);
         arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,files_on_server);
         listView.setAdapter(arrayAdapter);
@@ -81,46 +65,6 @@ public class Try extends AppCompatActivity {
         progressDialog.setCancelable(false);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Thread t = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        OkHttpClient client = new OkHttpClient();
-                        Request request = new Request.Builder().url("http://alibata-itp.esy.es/Pdf/script.php?list_files").build();
-
-                        Response response = null;
-                        try {
-                            response = client.newCall(request).execute();
-                            JSONArray array = new JSONArray(response.body().string());
-
-                            for (int i = 0; i <array.length(); i++){
-
-                                String file_name = array.getString(i);
-
-                                if(files_on_server.indexOf(file_name) == -1)
-                                    files_on_server.add(file_name);
-                            }
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    arrayAdapter.notifyDataSetChanged();
-                                }
-                            });
-
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-                t.start();
-            }
-        });
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -172,11 +116,73 @@ public class Try extends AppCompatActivity {
 
             }
         });
-        if(getSupportActionBar()!=null){
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        permission_check();
+
+        //if permission check = true
+
+    }
+
+    private void permission_check() {
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+            //not granted
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},100);
+                return;
+            }
+        }else{
+            //granted
+            showFilesOnServer();
         }
     }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if(requestCode == 100 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            showFilesOnServer();
+        }else {
+            permission_check();
+        }
+    }
+
+    private void showFilesOnServer(){
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                OkHttpClient client = new OkHttpClient();
+                Request request = new Request.Builder().url("http://alibata-itp.esy.es/Pdf/script.php?list_files").build();
+
+                Response response = null;
+                try {
+                    response = client.newCall(request).execute();
+                    JSONArray array = new JSONArray(response.body().string());
+
+                    for (int i = 0; i <array.length(); i++){
+
+                        String file_name = array.getString(i);
+
+                        if(files_on_server.indexOf(file_name) == -1)
+                            files_on_server.add(file_name);
+                    }
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            arrayAdapter.notifyDataSetChanged();
+                        }
+                    });
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        t.start();
+    }
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==android.R.id.home);
