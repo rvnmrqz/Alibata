@@ -165,7 +165,7 @@ public class ChangePassword extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                String qry = "UPDATE studenttbl set password ='"+newPass.getText().toString()+"' WHERE studid = "+studentId+" AND password = '"+currentPass.getText().toString()+"';";
+                String qry = "UPDATE studenttbl set password ='"+newPass.getText().toString()+"' WHERE studid = "+studentId+" AND BINARY password = '"+currentPass.getText().toString()+"';";
                 System.out.println("Change pass query : "+qry);
                 params.put("qry",qry );
                 return params;
