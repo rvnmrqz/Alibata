@@ -62,7 +62,6 @@ public class Announcement extends AppCompatActivity {
         loadingProgressDialog = (ProgressBar) findViewById(R.id.loadingProgress);
         loadingTextView = (TextView) findViewById(R.id.loadingTextView);
 
-
         records = new ArrayList<Announce>();
         header_footer = new View(this);
         listProduct = (ListView) findViewById(R.id.product_list);
@@ -139,7 +138,7 @@ public class Announcement extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                String qry = "select * from announcementtbl order by an_id desc;";
+                String qry = "select * from announcementtbl where date >= (CURDATE() - INTERVAL 3 DAY) order by date desc;";
                 System.out.println("Fetching announcement query : " + qry);
                 params.put("qry", qry);
                 return params;

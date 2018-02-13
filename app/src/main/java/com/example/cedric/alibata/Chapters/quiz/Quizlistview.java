@@ -53,7 +53,6 @@ public class Quizlistview extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizlistview);
 
-
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Checking");
         progressDialog.setMessage("Please wait...");

@@ -122,10 +122,8 @@ public class Complete extends AppCompatActivity {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
                             int score = jsonObject.getInt("score");
                             String datetime = jsonObject.getString("datetime");
-
                             sum+=score;
                             gradesEntries.add(new BarEntry((i+1),score));
-
                             txtScoreList[i].setText("Score: "+score);
                             if(datetime.trim().equalsIgnoreCase("null") || datetime.trim().length() == 0) datetime="N/A";
                             txtDateList[i].setText(datetime);
@@ -169,12 +167,12 @@ public class Complete extends AppCompatActivity {
         int maxValue =10;
 
         System.out.println("Set BarChart, gradeEntries count: "+gradesEntries.size());
+
         barChart.getDescription().setEnabled(false);
         barChart.setDrawValueAboveBar(true);
         barChart.setMaxVisibleValueCount(maxValue);
         barChart.setPinchZoom(false);
         barChart.setScaleEnabled(false);
-
 
         //to remove labels in X axis
         XAxis xAxis = barChart.getXAxis();
@@ -193,11 +191,17 @@ public class Complete extends AppCompatActivity {
         barChart.getAxisRight().setDrawAxisLine(false);
         barChart.getAxisRight().setDrawLabels(false);
 
-
-
         BarDataSet  barDataSet = new BarDataSet(gradesEntries,"Scores");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+
+
         BarData barData = new BarData(barDataSet);
+
+        //to fix oversize bar
+        if(gradesEntries.size() == 1){
+            barData.setBarWidth(0.3f);
+        }
+
         barChart.setData(barData);
         barChart.invalidate();
     }
