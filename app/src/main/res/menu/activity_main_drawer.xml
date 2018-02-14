@@ -17,9 +17,14 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Video" />
         <item
-            android:id="@+id/nav_quiz"
-            android:icon="@drawable/ic_live_help_black_24dp"
-            android:title="Quiz" />
+        android:id="@+id/nav_quiz"
+        android:icon="@drawable/ic_live_help_black_24dp"
+        android:title="Quiz" />
+
+        <item
+            android:id="@+id/nav_progress"
+            android:icon="@drawable/ic_chart"
+            android:title="My Progress" />
 
         <item
             android:id="@+id/nav_annoucement"

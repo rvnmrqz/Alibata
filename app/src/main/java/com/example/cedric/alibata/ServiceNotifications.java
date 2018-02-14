@@ -277,7 +277,6 @@ public class ServiceNotifications extends Service {
                                 int notifCount = Integer.parseInt(parts[1]);
 
                                 if (newNotifID > 0) {
-                                    System.out.println("\n\nNEW NOTIFICATION DETECTED\n\n");
                                     newAnnouncement(newNotifID, notifCount);
                                 } else {
                                     System.out.println("NO NEW NOTIFICATION");
@@ -323,19 +322,27 @@ public class ServiceNotifications extends Service {
 
     private void newAnnouncement(int newNotifId, int notifCount) {
 
+        System.out.println("\n\nNEW NOTIFICATION DETECTED\n\n");
+
         int unopened = getUnopenedNotif()+notifCount;
         setUnopenedNotif(unopened);
         setSharedPrefMaxNotifID(newNotifId);
         showNotification(unopened);
 
+        System.out.println("Unopened: "+unopened);
+
         //refresh listview
         if (Announcement.staticContext != null) {
+            System.out.println("Announcement Activity is opened");
             Announcement.loadNotifications();
         } else {
             //announcement activity is not opened
             if (MainActivity.staticContext != null) {
+                System.out.println("Main activity is active, set unopened badge: "+unopened);
                 //main activity is opened, update badge
                 MainActivity.setUnopenedBadge(unopened+"");
+            }else{
+                System.out.println("Main Activity is not opende");
             }
         }
     }

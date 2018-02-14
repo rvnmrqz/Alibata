@@ -88,6 +88,9 @@ public class MainActivity extends AppCompatActivity
     }
 
     public static void setUnopenedBadge(String count){
+
+        System.out.println("Set Badge: "+count);
+
         nav_announcement.setGravity(Gravity.CENTER_VERTICAL);
         nav_announcement.setTypeface(null, Typeface.BOLD);
         nav_announcement.setTextColor(staticContext.getResources().getColor(R.color.colorAccent));
@@ -95,13 +98,17 @@ public class MainActivity extends AppCompatActivity
         if(count.equalsIgnoreCase("0")) count="";
         nav_announcement.setText(count);
 
-        System.out.println("SetUnopenedBadge: "+count);
+        System.out.println("Badge Set: "+count);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+
         System.out.println("onResume");
+
+        staticContext = this;
+
         setUnopenedBadge(sharedPreferences.getInt(MySharedPref.NOTIFCOUNT,0)+"");
     }
 
@@ -122,12 +129,18 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+
         if (id == R.id.nav_lesson) {
             // Handle the lesson action
             MainFragment fragment = new MainFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
+
+            return  true;
 
         } else if (id == R.id.nav_additional_lesson) {
             /*SecondFragment secondFragment = new SecondFragment();
@@ -151,9 +164,11 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container,fourFragment);
             fragmentTransaction.commit();*/
-            Intent in = new Intent(this, Quizlistview.class);
-            startActivity(in);
+            startActivity(new Intent(this, Quizlistview.class).putExtra("quizmode",true));
 
+        }else if(id == R.id.nav_progress){
+
+            startActivity(new Intent(this, Quizlistview.class).putExtra("quizmode",false));
 
         } else if (id == R.id.nav_annoucement) {
             /*FifthFragment fifthFragment = new FifthFragment();
@@ -192,12 +207,8 @@ public class MainActivity extends AppCompatActivity
                         }
                     })
                     .show();
-
         }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+        return false;
     }
 
 

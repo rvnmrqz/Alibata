@@ -179,5 +179,10 @@ public class Announcement extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onDestroy() {
+        staticContext = null;
+        super.onDestroy();
+    }
 }
 

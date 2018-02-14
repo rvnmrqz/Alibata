@@ -125,7 +125,7 @@ public class Complete extends AppCompatActivity {
                             sum+=score;
                             gradesEntries.add(new BarEntry((i+1),score));
                             txtScoreList[i].setText("Score: "+score);
-                            if(datetime.trim().equalsIgnoreCase("null") || datetime.trim().length() == 0) datetime="N/A";
+                            if(datetime.trim().equalsIgnoreCase("null") || datetime.trim().length() == 0) datetime="";
                             txtDateList[i].setText(datetime);
                             System.out.println("Added: "+(i+1)+" Score: "+score);
                             ctr++;
@@ -133,11 +133,12 @@ public class Complete extends AppCompatActivity {
 
                         if(ctr>0){
                             txtAverage.setText("Average Score: "+ (new DecimalFormat("#.##").format(sum/ctr)));
-                            setBarChart();
+
                         }else{
                             Toast.makeText(Complete.this, "No Scores Fetched", Toast.LENGTH_SHORT).show();
                         }
 
+                    setBarChart();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

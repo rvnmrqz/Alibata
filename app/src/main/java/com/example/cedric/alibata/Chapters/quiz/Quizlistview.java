@@ -47,11 +47,16 @@ public class Quizlistview extends AppCompatActivity {
     Integer [] imgid={R.drawable.quizicon,R.drawable.quizicon,R.drawable.quizicon,R.drawable.quizicon};
     final int count=0;
 
+    boolean quizmode = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quizlistview);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Checking");
@@ -60,6 +65,10 @@ public class Quizlistview extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(MySharedPref.SHAREDPREFNAME,MODE_PRIVATE);
         studID = sharedPreferences.getString(MySharedPref.STUDID,"0");
 
+        quizmode = getIntent().getBooleanExtra("quizmode",false);
+
+        if(quizmode) getSupportActionBar().setTitle("Take Quiz");
+        else getSupportActionBar().setTitle("My Quiz History");
 
         listView=(ListView)findViewById(R.id.lstview);
         CustomListView customListView = new CustomListView(this,chapter,description,imgid);
@@ -67,15 +76,19 @@ public class Quizlistview extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               takeQuiz(position);
+                if(quizmode){
+                    takeQuiz(position);
+                }else{
+                    startActivity(new Intent(Quizlistview.this,Complete.class).putExtra("quizGroupId",position));
+                }
             }
         });
 
-        if(getSupportActionBar()!=null){
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-        }
+
+
     }
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==android.R.id.home);
@@ -83,6 +96,8 @@ public class Quizlistview extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
+
+
     @Override
     public void onBackPressed(){
         super.onBackPressed();
@@ -127,8 +142,6 @@ public class Quizlistview extends AppCompatActivity {
                                     }
                                 })
                                 .show();
-
-
                     }
 
                 } catch (JSONException e) {
