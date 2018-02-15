@@ -1,8 +1,11 @@
 package com.example.cedric.alibata;
 
 import android.Manifest;
+import android.app.DownloadManager;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
@@ -18,6 +21,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,8 +44,10 @@ public class Try extends AppCompatActivity {
     private ArrayList<String> files_on_server = new ArrayList<>();
     private Handler handler;
     private String selected_file;
-    private ProgressDialog progressDialog;
 
+
+
+    DownloadManager downloadManager;
 
 
     @Override
@@ -59,67 +65,16 @@ public class Try extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,files_on_server);
         listView.setAdapter(arrayAdapter);
         handler = new Handler();
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle("Downloading...");
-        progressDialog.setMax(100);
-        progressDialog.setCancelable(false);
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
                 selected_file = ((TextView)view).getText().toString();
-
-                Thread t = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        OkHttpClient client = new OkHttpClient();
-                        Request request = new Request.Builder().url("http://alibata-itp.esy.es/Pdf/files/" + selected_file).build();
-
-                        Response response = null;
-                        try {
-                            response = client.newCall(request).execute();
-                            float file_size = response.body().contentLength();
-
-                            BufferedInputStream inputStream = new BufferedInputStream(response.body().byteStream());
-                            OutputStream stream = new FileOutputStream(Environment.getExternalStorageDirectory()+"/Download/"+selected_file);
-
-                            byte[] data = new byte[8192];
-                            float total = 0;
-                            int read_bytes=0;
-
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-
-                                    progressDialog.show();
-                                }
-                            });
-                            while ( (read_bytes = inputStream.read(data)) != -1 ){
-
-                                total = total + read_bytes;
-                                stream.write( data, 0, read_bytes);
-                                progressDialog.setProgress((int) ((total / file_size)*100));
-
-                            }
-                            progressDialog.dismiss();
-                            stream.flush();
-                            stream.close();
-                            response.body().close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-                t.start();
-
+                download(selected_file);
             }
         });
 
         permission_check();
-
-        //if permission check = true
 
     }
 
@@ -182,6 +137,20 @@ public class Try extends AppCompatActivity {
         t.start();
     }
 
+    private void download(final String filename){
+
+        String filepath = "http://alibata-itp.esy.es/Pdf/files/"+filename;
+       try{
+           downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+
+           Uri uri = Uri.parse(filepath);
+           DownloadManager.Request request = new DownloadManager.Request(uri);
+           request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+           Long reference  = downloadManager.enqueue(request);
+       }catch (Exception ee){
+           Toast.makeText(this, "Problem occured while downloading", Toast.LENGTH_SHORT).show();
+       }
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
